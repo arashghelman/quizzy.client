@@ -5,5 +5,14 @@ export default {
   component: Status,
 };
 
-export const Public = () => <Status label="Public" />;
-export const Private = () => <Status label="Private" />;
+const Template = (args) => <Status {...args} />;
+
+export const Public = Template.bind({});
+Public.args = {
+  label: "Public",
+};
+
+export const Private = Template.bind({});
+Private.args = {
+  label: "Private",
+};
