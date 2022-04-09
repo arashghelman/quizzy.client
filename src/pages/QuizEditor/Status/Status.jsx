@@ -2,7 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export default function Status({ label }) {
-  return <span>{label}</span>;
+  const bgColors = {
+    Public: "bg-emerald-200",
+    Private: "bg-amber-200",
+  };
+
+  return (
+    <span
+      className={`px-3 py-1 text-sm text-neutral-700 font-normal rounded-full ${bgColors[label]}`}
+    >
+      {label}
+    </span>
+  );
 }
 
 Status.propTypes = {
