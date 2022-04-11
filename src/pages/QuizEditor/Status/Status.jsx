@@ -9,7 +9,7 @@ export default function Status({ label }) {
 
   return (
     <span
-      className={`px-3 py-1 text-sm text-neutral-700 font-normal rounded-full ${bgColors[label]}`}
+      className={`px-3 py-1 text-sm text-neutral-600 rounded-full ${bgColors[label]}`}
     >
       {label}
     </span>
