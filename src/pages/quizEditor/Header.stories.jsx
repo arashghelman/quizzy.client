@@ -2,7 +2,7 @@ import Header from "./Header";
 import { quiz } from "@/utils/mockData";
 
 export default {
-  title: "QuizEditor/Header",
+  title: "quizEditor/Header",
   component: Header,
 };
 
