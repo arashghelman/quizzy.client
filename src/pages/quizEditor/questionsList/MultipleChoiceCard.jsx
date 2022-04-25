@@ -4,7 +4,7 @@ import Option from "./questionCard/Option";
 import MultipleChoiceIcon from "remixicon-react/CheckboxMultipleLineIcon";
 
 export default function MultipleChoiceCard({
-  data: { title, number, options },
+  data: { id, title, number, options },
 }) {
   const optionsList = options.map((opt) => (
     <Option color={opt.isCorrect ? "bg-emerald-400" : "bg-pink-400"}>

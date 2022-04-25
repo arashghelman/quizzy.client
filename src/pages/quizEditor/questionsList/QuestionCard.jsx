@@ -8,7 +8,7 @@ import MoveBar from "./questionCard/MoveBar";
 
 export default function QuestionCard({
   config: { color, icon, actions },
-  data: { title, number, optionsList },
+  data: { id, title, number, optionsList },
 }) {
   return (
     <div className="flex">

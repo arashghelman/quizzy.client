@@ -6,7 +6,7 @@ import ActionButton from "./questionCard/ActionButton";
 import PollIcon from "remixicon-react/ChatPollLineIcon";
 import ShowIcon from "remixicon-react/EyeLineIcon";
 
-export default function PollCard({ data: { title, number, options } }) {
+export default function PollCard({ data: { id, title, number, options } }) {
   const optionsList = options.map((opt) => (
     <div className="flex flex-col gap-1">
       <Option color="bg-blue-400">{opt.value}</Option>
