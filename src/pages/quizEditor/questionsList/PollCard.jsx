@@ -2,8 +2,8 @@ import React from "react";
 import QuestionCard from "./QuestionCard";
 import Option from "./questionCard/Option";
 import PercentageBar from "./pollCard/PercentageBar";
-import PollIcon from "remixicon-react/ChatPollLineIcon";
 import ActionButton from "./questionCard/ActionButton";
+import PollIcon from "remixicon-react/ChatPollLineIcon";
 import ShowIcon from "remixicon-react/EyeLineIcon";
 
 export default function PollCard({ data: { title, number, options } }) {
