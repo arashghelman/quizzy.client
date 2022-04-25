@@ -1,7 +1,7 @@
 import Status from "./Status";
 
 export default {
-  title: "quizEditor/header/Status",
+  title: "QuizEditor/Header/Status",
   component: Status,
 };
 

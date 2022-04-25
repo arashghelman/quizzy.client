@@ -14,3 +14,21 @@ export const quiz = {
   description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam esse velit quibusdam, libero iure quaerat eius, illum maxime rem quae aperiam accusantium, ipsum fugiat beatae eos autem? Quia, explicabo repellendus.`,
   thumbnail: "https://blog.hubspot.com/hubfs/google-quiz.jpg",
 };
+
+export const question = {
+  id: "1",
+  title: "What's your name?",
+  number: "1",
+};
+
+export const mutlipleChoiceOptions = [
+  { id: "1", value: "Matt", isCorrect: false },
+  { id: "2", value: "Emily", isCorrect: true },
+  { id: "3", value: "Jaime", isCorrect: false },
+];
+
+export const pollOptions = [
+  { id: "1", value: "Matt" },
+  { id: "2", value: "Emily" },
+  { id: "3", value: "Jaime" },
+];

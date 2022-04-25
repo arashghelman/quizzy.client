@@ -1,8 +1,8 @@
 import Header from "./Header";
-import { quiz } from "@/utils/mockData";
+import { quiz } from "@/utils/fakeData";
 
 export default {
-  title: "quizEditor/Header",
+  title: "QuizEditor/Header",
   component: Header,
 };
 
