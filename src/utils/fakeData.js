@@ -32,3 +32,26 @@ export const pollOptions = [
   { id: "2", value: "Emily" },
   { id: "3", value: "Jaime" },
 ];
+
+export const questions = [
+  {
+    id: "1",
+    type: "MultipleChoice",
+    title: "What's your name?",
+    options: [
+      { id: "1", value: "Matt", isCorrect: false },
+      { id: "2", value: "Emily", isCorrect: true },
+      { id: "3", value: "Jaime", isCorrect: false },
+    ],
+  },
+  {
+    id: "2",
+    type: "Poll",
+    title: "What's your name?",
+    options: [
+      { id: "1", value: "Matt" },
+      { id: "2", value: "Emily" },
+      { id: "3", value: "Jaime" },
+    ],
+  },
+];
