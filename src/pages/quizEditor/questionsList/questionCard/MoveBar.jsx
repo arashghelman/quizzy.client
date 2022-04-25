@@ -6,19 +6,21 @@ import UndoIcon from "remixicon-react/ArrowGoBackLineIcon";
 export default function MoveBar({ color }) {
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleHover = () => setIsHovered((current) => !current);
+  const handleToggleHover = () => setIsHovered((current) => !current);
 
   return (
     <div
-      onMouseEnter={handleHover}
-      onMouseLeave={handleHover}
-      className={`${color} text-primary flex flex-col justify-center gap-12 items-center rounded-l-lg w-2 hover:w-10 transform duration-200`}
+      onMouseEnter={handleToggleHover}
+      onMouseLeave={handleToggleHover}
+      className={`${color} text-primary grid col-span-3 justify-center items-center rounded-l-lg 
+      w-2 ${isHovered && "w-10"} 
+      transform duration-200`}
     >
       {isHovered && (
         <>
-          {/* <ConfirmIcon size={iconSize} cursor="pointer" /> */}
+          {/* <ConfirmIcon cursor="pointer" className="w-base" /> */}
           <MoveIcon cursor="move" className="w-base" />
-          {/* <UndoIcon size={iconSize} cursor="pointer" /> */}
+          {/* <UndoIcon cursor="pointer" className="w-base" /> */}
         </>
       )}
     </div>
