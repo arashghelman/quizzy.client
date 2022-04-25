@@ -13,7 +13,7 @@ export default function Header({
     <div className="flex flex-col gap-7">
       <div className="flex justify-between">
         <div className="flex flex-col gap-6">
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-7">
             <Heading label={name} />
             <div className="flex-1">
               <Status label={status.type} />
