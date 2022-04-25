@@ -7,7 +7,10 @@ export default function MultipleChoiceCard({
   data: { id, title, number, options },
 }) {
   const optionsList = options.map((opt) => (
-    <Option color={opt.isCorrect ? "bg-emerald-400" : "bg-pink-400"}>
+    <Option
+      key={opt.id}
+      color={opt.isCorrect ? "bg-emerald-400" : "bg-pink-400"}
+    >
       {opt.value}
     </Option>
   ));
