@@ -55,3 +55,9 @@ export const questions = [
     ],
   },
 ];
+
+export const pollResult = [
+  { id: "1", result: 12 },
+  { id: "2", result: 57 },
+  { id: "3", result: 31 },
+];
