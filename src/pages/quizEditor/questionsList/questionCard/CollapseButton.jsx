@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@/components/Button";
-import ArrowUpIcon from "remixicon-react/ArrowUpSLineIcon";
-import ArrowDownIcon from "remixicon-react/ArrowDownSLineIcon";
+import CollapseIcon from "remixicon-react/ArrowUpSLineIcon";
+import ExpandIcon from "remixicon-react/ArrowDownSLineIcon";
 
 export default function CollapseButton({ isCollapsed, onCollapse }) {
   return (
@@ -10,9 +10,9 @@ export default function CollapseButton({ isCollapsed, onCollapse }) {
       onClick={onCollapse}
     >
       {isCollapsed ? (
-        <ArrowDownIcon className="w-base" />
+        <ExpandIcon className="w-base" />
       ) : (
-        <ArrowUpIcon className="w-base" />
+        <CollapseIcon className="w-base" />
       )}
     </Button>
   );
