@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function TipsCard() {
+export default function TodosCard() {
   return <div></div>;
 }
