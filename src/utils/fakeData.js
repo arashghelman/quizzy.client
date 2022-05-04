@@ -15,43 +15,26 @@ export const quiz = {
   thumbnail: "https://blog.hubspot.com/hubfs/google-quiz.jpg",
 };
 
-export const question = {
-  id: "1",
-  title: "What's your name?",
-  number: "1",
-};
-
-export const mutlipleChoiceOptions = [
-  { id: "1", value: "Matt", isCorrect: false },
-  { id: "2", value: "Emily", isCorrect: true },
-  { id: "3", value: "Jaime", isCorrect: false },
-];
-
-export const pollOptions = [
-  { id: "1", value: "Matt" },
-  { id: "2", value: "Emily" },
-  { id: "3", value: "Jaime" },
-];
-
 export const questions = [
   {
     id: "1",
     type: "MultipleChoice",
-    title: "What's your name?",
+    title: "Go ___ these stairs until you reach the top floor.",
     options: [
-      { id: "1", value: "Matt", isCorrect: false },
-      { id: "2", value: "Emily", isCorrect: true },
-      { id: "3", value: "Jaime", isCorrect: false },
+      { id: "1", value: "in", isCorrect: false },
+      { id: "2", value: "on", isCorrect: false },
+      { id: "3", value: "through", isCorrect: false },
+      { id: "4", value: "up", isCorrect: true },
     ],
   },
   {
     id: "2",
     type: "Poll",
-    title: "What's your name?",
+    title: "Why are you learning English?",
     options: [
-      { id: "1", value: "Matt" },
-      { id: "2", value: "Emily" },
-      { id: "3", value: "Jaime" },
+      { id: "1", value: "I want to go abroad" },
+      { id: "2", value: "For fun" },
+      { id: "3", value: "I have foreign friends" },
     ],
   },
 ];
