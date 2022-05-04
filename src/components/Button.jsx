@@ -5,12 +5,14 @@ export default function Button({
   variant,
   onClick,
   children,
+  ...rest
 }) {
   return (
     <button
       type={type}
       onClick={onClick}
-      className={`flex items-center gap-2 ${variant}`}
+      {...rest}
+      className={`flex justify-center items-center gap-2 ${variant}`}
     >
       {children}
     </button>
