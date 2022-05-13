@@ -12,7 +12,7 @@ export const quiz = {
     max: { name: "9th", id: "2" },
   },
   description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam esse velit quibusdam, libero iure quaerat eius, illum maxime rem quae aperiam accusantium, ipsum fugiat beatae eos autem? Quia, explicabo repellendus.`,
-  thumbnail: "https://blog.hubspot.com/hubfs/google-quiz.jpg",
+  thumbnailUrl: "https://blog.hubspot.com/hubfs/google-quiz.jpg",
 };
 
 export const questions = [
@@ -37,6 +37,17 @@ export const questions = [
       { id: "3", value: "I have foreign friends" },
     ],
   },
+  {
+    id: "3",
+    type: "MultipleChoice",
+    title: "I'm going ___ Madrid next week.",
+    options: [
+      { id: "1", value: "of", isCorrect: false },
+      { id: "2", value: "in", isCorrect: false },
+      { id: "3", value: "at", isCorrect: false },
+      { id: "4", value: "to", isCorrect: true },
+    ],
+  },
 ];
 
 export const pollResult = [
@@ -44,3 +55,11 @@ export const pollResult = [
   { id: "2", result: 57 },
   { id: "3", result: 31 },
 ];
+
+export const quizState = {
+  hasName: quiz.name !== null,
+  hasGrades: quiz.grades !== null,
+  hasDescription: quiz.description !== null,
+  hasQuestions: questions.length >= 4,
+  isPublic: quiz.status.type === "Public",
+};
