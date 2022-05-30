@@ -1,6 +1,6 @@
 export const quiz = {
   id: "1",
-  name: "Basic English Test - 1",
+  name: "Basic English Test",
   status: { type: "Public" },
   subjects: [
     { name: "English", id: "1" },
@@ -46,6 +46,16 @@ export const questions = [
       { id: "2", value: "in", isCorrect: false },
       { id: "3", value: "at", isCorrect: false },
       { id: "4", value: "to", isCorrect: true },
+    ],
+  },
+  {
+    id: "4",
+    type: "MultipleChoice",
+    title: "He was born ___ the 19th century.",
+    options: [
+      { id: "1", value: "at", isCorrect: false },
+      { id: "2", value: "on", isCorrect: false },
+      { id: "3", value: "in", isCorrect: true },
     ],
   },
 ];
