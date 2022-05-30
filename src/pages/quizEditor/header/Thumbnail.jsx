@@ -5,7 +5,7 @@ export default function Thumbnail({ url }) {
     <img
       src={url}
       alt="Thumbnail"
-      className="w-[500px] h-[170px] object-cover"
+      className="rounded-md border-1 w-[270px] h-[170px] object-cover"
     />
   );
 }

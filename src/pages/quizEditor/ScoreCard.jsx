@@ -20,7 +20,7 @@ export default function ScoreCard({
   const { score, barColor } = useScore(value, max);
 
   return (
-    <div className="flex flex-col gap-loose text-lighter border-1 rounded-lg p-loose">
+    <div className="flex flex-col gap-loose bg-white text-gray-light-1 border-1 rounded-lg p-loose">
       <div>
         <h1 className="font-semibold">Quiz score</h1>
       </div>

@@ -12,7 +12,7 @@ Public.args = {
   label: "Public",
 };
 
-export const Private = Template.bind({});
-Private.args = {
-  label: "Private",
+export const Draft = Template.bind({});
+Draft.args = {
+  label: "Draft",
 };
