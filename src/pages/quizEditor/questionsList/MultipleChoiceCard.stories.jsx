@@ -1,7 +1,6 @@
 import React from "react";
-import { questions } from "@/utils/fakeData";
-import { questionType } from "@/constants/enums";
 import MultipleChoiceCard from "./MultipleChoiceCard";
+import { question, mutlipleChoiceOptions } from "@/utils/fakeData";
 
 export default {
   title: "QuizEditor/Questions/MultipleChoiceCard",
@@ -13,6 +12,8 @@ const Template = (args) => <MultipleChoiceCard {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   data: {
-    ...questions.find((que) => que.type === questionType.MULTIPLE_CHOICE),
+    title: question.title,
+    number: question.number,
+    options: mutlipleChoiceOptions,
   },
 };
