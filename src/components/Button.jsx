@@ -12,7 +12,7 @@ export default function Button({
       type={type}
       onClick={onClick}
       {...rest}
-      className={`flex justify-center items-center gap-2 ${variant}`}
+      className={`flex justify-center items-center gap-tight ${variant}`}
     >
       {children}
     </button>
