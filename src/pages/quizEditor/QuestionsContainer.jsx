@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useDragLayer } from "react-dnd";
 import { questionType } from "@/constants/enums";
-import Button from "@/components/Button";
 import { useContainer } from "./questionsContainer/useContainer";
 import MultipleChoiceCard from "./questionsContainer/MultipleChoiceCard";
 import PollCard from "./questionsContainer/PollCard";
 import DragDropBar from "./questionsContainer/DragDropBar";
+import CollapseAllButton from "./questionsContainer/CollapseAllButton";
 
 export default function QuestionsContainer({ questions }) {
   const [
@@ -63,12 +63,10 @@ export default function QuestionsContainer({ questions }) {
     <>
       <div className="flex flex-col w-full">
         <div className="flex gap-base self-end mr-2 mb-2">
-          <Button
-            variant="text-sky-base hover:text-sky-base/70"
+          <CollapseAllButton
+            label={areItemsCollapsed ? "Expand All" : "Collapse All"}
             onClick={() => setAreItemsCollapsed(!areItemsCollapsed)}
-          >
-            {areItemsCollapsed ? "Expand All" : "Collapse All"}
-          </Button>
+          />
         </div>
         <div role="list" className="flex flex-col gap-base w-full pb-16">
           {questionsList}
