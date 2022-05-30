@@ -1,6 +1,7 @@
 import React from "react";
+import { questions } from "@/utils/fakeData";
+import { questionType } from "@/constants/enums";
 import PollCard from "./PollCard";
-import { question, pollOptions } from "@/utils/fakeData";
 
 export default {
   title: "QuizEditor/Questions/PollCard",
@@ -11,9 +12,5 @@ const Template = (args) => <PollCard {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  data: {
-    title: question.title,
-    number: question.number,
-    options: pollOptions,
-  },
+  data: { ...questions.find((que) => que.type === questionType.POLL) },
 };
