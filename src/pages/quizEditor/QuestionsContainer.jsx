@@ -7,6 +7,7 @@ import MultipleChoiceCard from "./questionsContainer/MultipleChoiceCard";
 import PollCard from "./questionsContainer/PollCard";
 import DragDropBar from "./questionsContainer/DragDropBar";
 import CollapseAllButton from "./questionsContainer/CollapseAllButton";
+import AddQuestionButton from "./questionsContainer/AddQuestionButton";
 
 export default function QuestionsContainer({ questions }) {
   const [
@@ -63,6 +64,7 @@ export default function QuestionsContainer({ questions }) {
     <>
       <div className="flex flex-col w-full">
         <div className="flex gap-base self-end mr-2 mb-2">
+          <AddQuestionButton />
           <CollapseAllButton
             label={areItemsCollapsed ? "Expand All" : "Collapse All"}
             onClick={() => setAreItemsCollapsed(!areItemsCollapsed)}
