@@ -7,6 +7,7 @@ module.exports = {
           base: "#374151",
           "light-1": "#4b5563",
           "light-2": "#6b7280",
+          "light-3": "#f3f4f6",
         },
         red: {
           base: "#f87171",
@@ -32,6 +33,7 @@ module.exports = {
       width: {
         base: "1.3rem",
         sm: "1.1rem",
+        xs: "1rem",
       },
       spacing: {
         "extra-tight": "0.25rem",
