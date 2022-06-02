@@ -1,10 +1,10 @@
 import React from "react";
 import { questions } from "@/utils/fakeData";
-import { questionType } from "@/constants/enums";
+import { questionType } from "@/constants/questionType";
 import MultipleChoiceCard from "./MultipleChoiceCard";
 
 export default {
-  title: "QuizEditor/Questions/MultipleChoiceCard",
+  title: "QuizEditor/QuestionsContainer/MultipleChoiceCard",
   component: MultipleChoiceCard,
 };
 

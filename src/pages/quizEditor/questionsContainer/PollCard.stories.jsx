@@ -1,10 +1,10 @@
 import React from "react";
 import { questions } from "@/utils/fakeData";
-import { questionType } from "@/constants/enums";
+import { questionType } from "@/constants/questionType";
 import PollCard from "./PollCard";
 
 export default {
-  title: "QuizEditor/Questions/PollCard",
+  title: "QuizEditor/QuestionsContainer/PollCard",
   component: PollCard,
 };
 
