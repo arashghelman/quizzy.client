@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useDragLayer } from "react-dnd";
-import { questionType } from "@/constants/enums";
+import { questionType } from "@/constants/questionType";
 import { useContainer } from "./questionsContainer/useContainer";
 import MultipleChoiceCard from "./questionsContainer/MultipleChoiceCard";
 import PollCard from "./questionsContainer/PollCard";
 import DragDropBar from "./questionsContainer/DragDropBar";
 import CollapseAllButton from "./questionsContainer/CollapseAllButton";
 import AddQuestionButton from "./questionsContainer/AddQuestionButton";
+import SelectTypeMenu from "./questionsContainer/SelectTypeMenu";
 
 export default function QuestionsContainer({ questions }) {
   const [
@@ -60,11 +61,18 @@ export default function QuestionsContainer({ questions }) {
     setIsShowingBar(false);
   };
 
+  const [isShowingTypeMenu, setIsShowingTypeMenu] = useState(false);
+
   return (
     <>
       <div className="flex flex-col w-full">
-        <div className="flex gap-base self-end mr-2 mb-2">
-          <AddQuestionButton />
+        <div className="flex gap-base self-end mb-2 relative">
+          <div>
+            <AddQuestionButton
+              onClick={() => setIsShowingTypeMenu((prev) => !prev)}
+            />
+            {isShowingTypeMenu && <SelectTypeMenu />}
+          </div>
           <CollapseAllButton
             label={areItemsCollapsed ? "Expand All" : "Collapse All"}
             onClick={() => setAreItemsCollapsed(!areItemsCollapsed)}
