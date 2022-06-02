@@ -1,7 +1,8 @@
 import React from "react";
+import { questionType } from "@/constants/questionType";
+import QuestionIcon from "@/components/QuestionIcon";
 import QuestionCard from "./QuestionCard";
 import Option from "./questionCard/Option";
-import MultipleChoiceIcon from "remixicon-react/CheckboxMultipleLineIcon";
 
 export default function MultipleChoiceCard({
   data: { options, ...rest },
@@ -19,7 +20,9 @@ export default function MultipleChoiceCard({
   return (
     <QuestionCard
       config={{
-        icon: <MultipleChoiceIcon className="w-base" />,
+        icon: (
+          <QuestionIcon type={questionType.MULTIPLE_CHOICE} size="w-base" />
+        ),
         color: "bg-amber-base",
       }}
       data={{ optionsElement, ...rest }}

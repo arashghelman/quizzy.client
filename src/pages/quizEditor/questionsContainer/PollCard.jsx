@@ -1,10 +1,11 @@
 import React from "react";
+import { questionType } from "@/constants/questionType";
 import { usePollResults } from "./pollCard/usePollResults";
 import QuestionCard from "./QuestionCard";
 import Option from "./questionCard/Option";
 import ResultsBar from "./pollCard/ResultsBar";
 import CardButton from "./questionCard/CardButton";
-import PollIcon from "remixicon-react/ChatPollLineIcon";
+import QuestionIcon from "@/components/QuestionIcon";
 import ShowIcon from "remixicon-react/EyeLineIcon";
 import HideIcon from "remixicon-react/EyeOffLineIcon";
 
@@ -48,7 +49,7 @@ export default function PollCard({
   return (
     <QuestionCard
       config={{
-        icon: <PollIcon className="w-base" />,
+        icon: <QuestionIcon type={questionType.POLL} size="w-base" />,
         color: "bg-blue-base",
         buttons,
       }}
