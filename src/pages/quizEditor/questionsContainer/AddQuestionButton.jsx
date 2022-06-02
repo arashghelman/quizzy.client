@@ -1,12 +1,12 @@
 import React from "react";
-import Button from "@/components/Button";
 import AddIcon from "remixicon-react/AddLineIcon";
+import Button from "@/components/Button";
 
-export default function AddQuestionButton() {
+export default function AddQuestionButton({ onClick }) {
   return (
-    <Button variant="text-sky-base hover:text-sky-base/70">
+    <Button variant="text-sky-base hover:text-sky-base/70" onClick={onClick}>
       <AddIcon className="w-sm" />
-      New Question
+      Add Question
     </Button>
   );
 }
