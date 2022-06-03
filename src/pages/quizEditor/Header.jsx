@@ -5,6 +5,7 @@ import Thumbnail from "./header/Thumbnail";
 import Subject from "./header/Subject";
 import ToolBar from "./header/ToolBar";
 import Status from "./header/Status";
+import Chapter from "./header/Chapter";
 
 export default function Header({
   data: { name, status, description, thumbnailUrl },
@@ -20,7 +21,7 @@ export default function Header({
                 <Status label={status.type} />
               </div>
             </div>
-            <span className="text-gray-base font-semibold">Part 1 of 2</span>
+            <Chapter number="1" total="2" />
           </div>
           <Description text={description} />
           <div className="flex gap-tight">
