@@ -8,9 +8,18 @@ export default function ActionBar({ buttons }) {
   return (
     <div className="flex gap-2">
       {buttons}
-      <CardButton icon={<DeleteIcon className="w-sm" />} />
-      <CardButton icon={<DuplicateIcon className="w-sm" />} />
-      <CardButton icon={<EditIcon className="w-sm" />} />
+      <CardButton
+        title="Delete this question"
+        icon={<DeleteIcon className="w-sm" />}
+      />
+      <CardButton
+        title="Duplicate this question"
+        icon={<DuplicateIcon className="w-sm" />}
+      />
+      <CardButton
+        title="Edit this question"
+        icon={<EditIcon className="w-sm" />}
+      />
     </div>
   );
 }

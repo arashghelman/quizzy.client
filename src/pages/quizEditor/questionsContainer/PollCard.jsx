@@ -34,9 +34,13 @@ export default function PollCard({
   };
 
   const buttons = isShowingResults ? (
-    <CardButton icon={<HideIcon className="w-sm" onClick={hideResults} />} />
+    <CardButton
+      title="Hide results"
+      icon={<HideIcon className="w-sm" onClick={hideResults} />}
+    />
   ) : (
     <CardButton
+      title="Show results"
       icon={<ShowIcon className="w-sm" onClick={handleShowResults} />}
     />
   );
