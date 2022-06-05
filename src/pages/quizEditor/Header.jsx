@@ -1,10 +1,10 @@
 import React from "react";
-import Heading from "./header/Heading";
+import Heading from "../../components/Heading";
 import Description from "./header/Description";
 import Thumbnail from "./header/Thumbnail";
-import Subject from "./header/Subject";
+import QuizSubject from "./header/QuizSubject";
 import ToolBar from "./header/ToolBar";
-import Status from "./header/Status";
+import QuizStatus from "./header/QuizStatus";
 import Chapter from "./header/Chapter";
 
 export default function Header({
@@ -18,16 +18,16 @@ export default function Header({
             <div className="flex items-center gap-loose">
               <Heading text={name} />
               <div>
-                <Status label={status.type} />
+                <QuizStatus label={status.type} />
               </div>
             </div>
             <Chapter number="1" total="2" />
           </div>
           <Description text={description} />
           <div className="flex gap-tight">
-            <Subject label="🇬🇧 English" />
-            <Subject label="🎉 Fun" />
-            <Subject label="🌎 World Languages" />
+            <QuizSubject label="English" />
+            <QuizSubject label="Fun" />
+            <QuizSubject label="World Languages" />
           </div>
         </div>
         <Thumbnail url={thumbnailUrl} />
