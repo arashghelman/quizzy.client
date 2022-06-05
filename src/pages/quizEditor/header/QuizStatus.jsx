@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Status({ label }) {
+export default function QuizStatus({ label }) {
   const bgColors = {
     Public: "bg-emerald-light-2",
     Draft: "bg-amber-base",
@@ -16,6 +16,6 @@ export default function Status({ label }) {
   );
 }
 
-Status.propTypes = {
+QuizStatus.propTypes = {
   label: PropTypes.oneOf(["Public", "Draft"]),
 };
