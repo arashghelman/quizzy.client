@@ -20,9 +20,7 @@ export default function MultipleChoiceCard({
   return (
     <QuestionCard
       config={{
-        icon: (
-          <QuestionIcon type={questionType.MULTIPLE_CHOICE} size="w-base" />
-        ),
+        icon: <QuestionIcon type={questionType.MULTIPLE_CHOICE} />,
         color: "bg-amber-base",
       }}
       data={{ optionsElement, ...rest }}

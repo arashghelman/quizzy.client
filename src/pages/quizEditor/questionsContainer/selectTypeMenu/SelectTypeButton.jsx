@@ -9,7 +9,7 @@ export default function SelectTypeButton({ type, label }) {
       border-b-1 last:border-b-0 hover:bg-gray-light-3"
     >
       {label}
-      <QuestionIcon type={type} size="w-xs" />
+      <QuestionIcon type={type} size="sm" />
     </Button>
   );
 }

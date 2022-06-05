@@ -53,7 +53,7 @@ export default function PollCard({
   return (
     <QuestionCard
       config={{
-        icon: <QuestionIcon type={questionType.POLL} size="w-base" />,
+        icon: <QuestionIcon type={questionType.POLL} />,
         color: "bg-blue-base",
         buttons,
       }}
