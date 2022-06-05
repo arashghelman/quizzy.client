@@ -9,4 +9,3 @@ export default {
 const Template = (args) => <QuizEditor {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
