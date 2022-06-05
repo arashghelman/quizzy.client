@@ -1,7 +1,7 @@
 import React from "react";
 import CheckIcon from "remixicon-react/CheckFillIcon";
 
-export default function TipItem({ isDone, label }) {
+export default function Tip({ isDone, label }) {
   return (
     <div className="flex items-center gap-tight text-light-1">
       {isDone && <CheckIcon className="text-emerald-base w-base" />}

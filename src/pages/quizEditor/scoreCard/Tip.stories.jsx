@@ -1,12 +1,12 @@
 import React from "react";
-import TipItem from "./TipItem";
+import Tip from "./Tip";
 
 export default {
-  title: "QuizEditor/ScoreCard/TipItem",
-  component: TipItem,
+  title: "QuizEditor/ScoreCard/Tip",
+  component: Tip,
 };
 
-const Template = (args) => <TipItem {...args} />;
+const Template = (args) => <Tip {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
