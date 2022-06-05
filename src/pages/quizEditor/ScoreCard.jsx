@@ -1,7 +1,7 @@
 import React from "react";
 import { useScore } from "./scoreCard/useScore";
 import ProgressBar from "./scoreCard/ProgressBar";
-import TipItem from "./scoreCard/TipItem";
+import Tip from "./scoreCard/Tip";
 
 export default function ScoreCard({
   quizState: { hasName, hasGrades, hasDescription, hasQuestions, isPublic },
@@ -29,8 +29,8 @@ export default function ScoreCard({
         <ProgressBar value={value} max={max} color={barColor} />
       </div>
       <div role="list" className="flex flex-col gap-base">
-        {tips.map(({ label, isDone }, index) => (
-          <TipItem key={index} label={label} isDone={isDone} />
+        {tips.map(({ label, isDone }) => (
+          <Tip key={label} label={label} isDone={isDone} />
         ))}
       </div>
     </div>
