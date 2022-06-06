@@ -12,7 +12,8 @@ export const quiz = {
     max: { name: "9th", id: "2" },
   },
   description: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam esse velit quibusdam, libero iure quaerat eius, illum maxime rem quae aperiam accusantium, ipsum fugiat beatae eos autem? Quia, explicabo repellendus.`,
-  thumbnailUrl: "https://blog.hubspot.com/hubfs/google-quiz.jpg",
+  thumbnailUrl:
+    "https://media.istockphoto.com/vectors/quiz-neon-text-banner-on-brick-wall-questions-team-game-quiz-night-vector-id1223692043?k=20&m=1223692043&s=170667a&w=0&h=MXrR6XcdSGCYpzeSGxj7ANNzQfAcbXT-68cEjZ1dVzE=",
 };
 
 export const questions = [
