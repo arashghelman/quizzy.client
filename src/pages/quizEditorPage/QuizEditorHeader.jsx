@@ -1,7 +1,7 @@
 import React from "react";
 import Heading from "../../components/Heading";
 import QuizDescriptionParagraph from "./quizEditorHeader/QuizDescriptionParagraph";
-import Thumbnail from "./quizEditorHeader/Thumbnail";
+import QuizThumbnail from "./quizEditorHeader/QuizThumbnail";
 import QuizSubjectTag from "./quizEditorHeader/QuizSubjectTag";
 import ToolBar from "./quizEditorHeader/ToolBar";
 import QuizStatusLabel from "./quizEditorHeader/QuizStatusLabel";
@@ -31,7 +31,7 @@ export default function QuizEditorHeader({
           </div>
         </div>
         <div className="self-center">
-          <Thumbnail url={thumbnailUrl} />
+          <QuizThumbnail url={thumbnailUrl} />
         </div>
       </div>
       <ToolBar />

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "@/components/Button";
 import EditIcon from "remixicon-react/PencilLineIcon";
 
-export default function Thumbnail({ url }) {
+export default function QuizThumbnail({ url }) {
   const [isShowingEditButton, setIsShowingEditButton] = useState(false);
   return (
     <div
