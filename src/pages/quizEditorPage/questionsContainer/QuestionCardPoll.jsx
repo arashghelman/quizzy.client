@@ -9,7 +9,7 @@ import QuestionIcon from "@/components/QuestionIcon";
 import ShowIcon from "remixicon-react/EyeLineIcon";
 import HideIcon from "remixicon-react/EyeOffLineIcon";
 
-export default function PollCard({
+export default function QuestionCardPoll({
   data: { id, options, ...rest },
   onSetCollapse,
   ...props

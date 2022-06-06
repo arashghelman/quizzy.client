@@ -1,7 +1,7 @@
 import React from "react";
 import QuestionsContainer from "./QuestionsContainer";
 import * as MultipleChoiceCardStories from "./questionsContainer/MultipleChoiceCard.stories";
-import * as PollCardStories from "./questionsContainer/PollCard.stories";
+import * as PollCardStories from "./questionsContainer/QuestionCardPoll.stories";
 
 export default {
   title: "QuizEditor/QuestionsContainer",

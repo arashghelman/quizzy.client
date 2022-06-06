@@ -4,7 +4,7 @@ import { useDragLayer } from "react-dnd";
 import { questionType } from "@/constants/questionType";
 import { useContainer } from "./questionsContainer/useContainer";
 import MultipleChoiceCard from "./questionsContainer/MultipleChoiceCard";
-import PollCard from "./questionsContainer/PollCard";
+import QuestionCardPoll from "./questionsContainer/QuestionCardPoll";
 import DragDropBar from "./questionsContainer/DragDropBar";
 import CollapseAllButton from "./questionsContainer/CollapseAllButton";
 import AddQuestionButton from "./questionsContainer/AddQuestionButton";
@@ -43,7 +43,7 @@ export default function QuestionsContainer({ questions }) {
         return <MultipleChoiceCard {...props} />;
 
       case questionType.POLL:
-        return <PollCard {...props} />;
+        return <QuestionCardPoll {...props} />;
 
       default:
         throw new Error("No component was found for the type");
