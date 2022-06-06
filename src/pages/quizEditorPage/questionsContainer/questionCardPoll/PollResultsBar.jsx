@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ResultsBar({ value }) {
+export default function PollResultsBar({ value }) {
   return (
     <div className="flex items-center gap-3">
       <div

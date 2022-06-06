@@ -1,9 +1,9 @@
 import React from "react";
 import { questionType } from "@/constants/questionType";
-import { usePollResults } from "./pollCard/usePollResults";
+import { useResults } from "./questionCardPoll/useResults";
 import QuestionCard from "./QuestionCard";
 import Option from "./questionCard/Option";
-import ResultsBar from "./pollCard/ResultsBar";
+import PollResultsBar from "./questionCardPoll/PollResultsBar";
 import CardButton from "./questionCard/CardButton";
 import QuestionIcon from "@/components/QuestionIcon";
 import ShowIcon from "remixicon-react/EyeLineIcon";
@@ -14,15 +14,15 @@ export default function QuestionCardPoll({
   onSetCollapse,
   ...props
 }) {
-  const { pollOptions, isShowingResults, showResults, hideResults } =
-    usePollResults(id, options);
+  const [pollOptions, isShowingResults, showResults, hideResults] =
+    useResults(options);
 
   const optionsElement = pollOptions.map((opt) => (
     <div key={opt.id} className="flex flex-col gap-1">
       <Option color="bg-blue-400">{opt.value}</Option>
       {isShowingResults && (
         <div className="ml-6">
-          <ResultsBar value={opt.result} />
+          <PollResultsBar value={opt.result} />
         </div>
       )}
     </div>

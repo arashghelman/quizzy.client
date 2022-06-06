@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { pollResult } from "@/utils/fakeData";
 
-export function usePollResults(id, options) {
+export function useResults(options) {
   const [pollOptions, setPollOptions] = useState([]);
 
   useEffect(() => setPollOptions(options), [options]);
@@ -25,5 +25,5 @@ export function usePollResults(id, options) {
     setIsShowingResults(false);
   };
 
-  return { pollOptions, isShowingResults, showResults, hideResults };
+  return [pollOptions, isShowingResults, showResults, hideResults];
 }
