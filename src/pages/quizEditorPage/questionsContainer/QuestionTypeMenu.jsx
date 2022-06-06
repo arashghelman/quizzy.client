@@ -1,8 +1,8 @@
 import React from "react";
 import { questionType } from "@/constants/questionType";
-import SelectTypeButton from "./selectTypeMenu/SelectTypeButton";
+import SelectTypeButton from "./questionTypeMenu/SelectTypeButton";
 
-export default function SelectTypeMenu() {
+export default function QuestionTypeMenu() {
   return (
     <div
       role="list"

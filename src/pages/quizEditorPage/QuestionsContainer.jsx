@@ -8,7 +8,7 @@ import QuestionCardPoll from "./questionsContainer/QuestionCardPoll";
 import DragDropBar from "./questionsContainer/DragDropBar";
 import CollapseAllButton from "./questionsContainer/CollapseAllButton";
 import AddQuestionButton from "./questionsContainer/AddQuestionButton";
-import SelectTypeMenu from "./questionsContainer/SelectTypeMenu";
+import QuestionTypeMenu from "./questionsContainer/QuestionTypeMenu";
 
 export default function QuestionsContainer({ questions }) {
   const [
@@ -71,7 +71,7 @@ export default function QuestionsContainer({ questions }) {
             <AddQuestionButton
               onClick={() => setIsShowingTypeMenu((prev) => !prev)}
             />
-            {isShowingTypeMenu && <SelectTypeMenu />}
+            {isShowingTypeMenu && <QuestionTypeMenu />}
           </div>
           <CollapseAllButton
             label={areItemsCollapsed ? "Expand All" : "Collapse All"}
