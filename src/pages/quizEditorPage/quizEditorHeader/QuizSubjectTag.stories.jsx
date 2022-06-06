@@ -1,10 +1,10 @@
 import React from "react";
-import QuizSubject from "./QuizSubject";
+import QuizSubjectTag from "./QuizSubjectTag";
 import { subjectIcon } from "@/constants/subjectIcon";
 
 export default {
   title: "QuizEditor/Header/QuizSubject",
-  component: QuizSubject,
+  component: QuizSubjectTag,
   argTypes: {
     label: {
       options: Object.keys(subjectIcon),
@@ -13,7 +13,7 @@ export default {
   },
 };
 
-const Template = (args) => <QuizSubject {...args} />;
+const Template = (args) => <QuizSubjectTag {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   label: "English",

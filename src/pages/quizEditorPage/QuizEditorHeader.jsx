@@ -2,7 +2,7 @@ import React from "react";
 import Heading from "../../components/Heading";
 import Description from "./quizEditorHeader/Description";
 import Thumbnail from "./quizEditorHeader/Thumbnail";
-import QuizSubject from "./quizEditorHeader/QuizSubject";
+import QuizSubjectTag from "./quizEditorHeader/QuizSubjectTag";
 import ToolBar from "./quizEditorHeader/ToolBar";
 import QuizStatus from "./quizEditorHeader/QuizStatus";
 import Chapter from "./quizEditorHeader/Chapter";
@@ -25,9 +25,9 @@ export default function QuizEditorHeader({
           </div>
           <Description text={description} />
           <div className="flex gap-tight">
-            <QuizSubject label="English" />
-            <QuizSubject label="Fun" />
-            <QuizSubject label="World Languages" />
+            <QuizSubjectTag label="English" />
+            <QuizSubjectTag label="Fun" />
+            <QuizSubjectTag label="World Languages" />
           </div>
         </div>
         <div className="self-center">
