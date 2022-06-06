@@ -1,13 +1,13 @@
 import React from "react";
 import Heading from "../../components/Heading";
-import Description from "./header/Description";
-import Thumbnail from "./header/Thumbnail";
-import QuizSubject from "./header/QuizSubject";
-import ToolBar from "./header/ToolBar";
-import QuizStatus from "./header/QuizStatus";
-import Chapter from "./header/Chapter";
+import Description from "./quizEditorHeader/Description";
+import Thumbnail from "./quizEditorHeader/Thumbnail";
+import QuizSubject from "./quizEditorHeader/QuizSubject";
+import ToolBar from "./quizEditorHeader/ToolBar";
+import QuizStatus from "./quizEditorHeader/QuizStatus";
+import Chapter from "./quizEditorHeader/Chapter";
 
-export default function Header({
+export default function QuizEditorHeader({
   data: { name, status, description, thumbnailUrl },
 }) {
   return (

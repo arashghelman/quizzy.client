@@ -1,13 +1,13 @@
 import React from "react";
-import Header from "./Header";
+import QuizEditorHeader from "./QuizEditorHeader";
 import { quiz } from "@/utils/fakeData";
 
 export default {
   title: "QuizEditor/Header",
-  component: Header,
+  component: QuizEditorHeader,
 };
 
-const Template = (args) => <Header {...args} />;
+const Template = (args) => <QuizEditorHeader {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
