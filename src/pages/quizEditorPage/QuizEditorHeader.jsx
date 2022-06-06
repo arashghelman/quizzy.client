@@ -4,7 +4,7 @@ import Description from "./quizEditorHeader/Description";
 import Thumbnail from "./quizEditorHeader/Thumbnail";
 import QuizSubjectTag from "./quizEditorHeader/QuizSubjectTag";
 import ToolBar from "./quizEditorHeader/ToolBar";
-import QuizStatus from "./quizEditorHeader/QuizStatus";
+import QuizStatusLabel from "./quizEditorHeader/QuizStatusLabel";
 import Chapter from "./quizEditorHeader/Chapter";
 
 export default function QuizEditorHeader({
@@ -18,7 +18,7 @@ export default function QuizEditorHeader({
             <div className="flex items-center gap-loose">
               <Heading text={name} />
               <div>
-                <QuizStatus label={status.type} />
+                <QuizStatusLabel label={status.type} />
               </div>
             </div>
             <Chapter number="1" total="2" />

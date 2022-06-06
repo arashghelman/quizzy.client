@@ -1,12 +1,12 @@
 import React from "react";
-import QuizStatus from "./QuizStatus";
+import QuizStatusLabel from "./QuizStatusLabel";
 
 export default {
   title: "QuizEditor/Header/QuizStatus",
-  component: QuizStatus,
+  component: QuizStatusLabel,
 };
 
-const Template = (args) => <QuizStatus {...args} />;
+const Template = (args) => <QuizStatusLabel {...args} />;
 
 export const Public = Template.bind({});
 Public.args = {
