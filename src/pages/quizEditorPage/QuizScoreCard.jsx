@@ -1,7 +1,7 @@
 import React from "react";
 import { useScore } from "./quizScoreCard/useScore";
-import ProgressBar from "./quizScoreCard/ProgressBar";
-import Tip from "./quizScoreCard/Tip";
+import ScoreProgressBar from "./quizScoreCard/ScoreProgressBar";
+import ScoreTipItem from "./quizScoreCard/ScoreTipItem";
 
 export default function QuizScoreCard({
   quizState: { hasName, hasGrades, hasDescription, hasQuestions, isPublic },
@@ -26,11 +26,11 @@ export default function QuizScoreCard({
       </div>
       <div className="flex flex-col gap-tight">
         <div className="text-2xl font-bold">{score}%</div>
-        <ProgressBar value={value} max={max} color={barColor} />
+        <ScoreProgressBar value={value} max={max} color={barColor} />
       </div>
       <div role="list" className="flex flex-col gap-base">
         {tips.map(({ label, isDone }) => (
-          <Tip key={label} label={label} isDone={isDone} />
+          <ScoreTipItem key={label} label={label} isDone={isDone} />
         ))}
       </div>
     </div>

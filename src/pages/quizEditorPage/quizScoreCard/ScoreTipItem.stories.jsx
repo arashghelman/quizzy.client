@@ -1,12 +1,12 @@
 import React from "react";
-import Tip from "./Tip";
+import ScoreTipItem from "./ScoreTipItem";
 
 export default {
   title: "QuizEditor/ScoreCard/Tip",
-  component: Tip,
+  component: ScoreTipItem,
 };
 
-const Template = (args) => <Tip {...args} />;
+const Template = (args) => <ScoreTipItem {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
