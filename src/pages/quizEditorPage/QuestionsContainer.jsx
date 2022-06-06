@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useDragLayer } from "react-dnd";
 import { questionType } from "@/constants/questionType";
 import { useContainer } from "./questionsContainer/useContainer";
-import MultipleChoiceCard from "./questionsContainer/MultipleChoiceCard";
+import QuestionCardMultipleChoice from "./questionsContainer/QuestionCardMultipleChoice";
 import QuestionCardPoll from "./questionsContainer/QuestionCardPoll";
 import DragDropBar from "./questionsContainer/DragDropBar";
 import CollapseAllButton from "./questionsContainer/CollapseAllButton";
@@ -40,7 +40,7 @@ export default function QuestionsContainer({ questions }) {
 
     switch (type) {
       case questionType.MULTIPLE_CHOICE:
-        return <MultipleChoiceCard {...props} />;
+        return <QuestionCardMultipleChoice {...props} />;
 
       case questionType.POLL:
         return <QuestionCardPoll {...props} />;

@@ -1,6 +1,6 @@
 import React from "react";
 import QuestionsContainer from "./QuestionsContainer";
-import * as MultipleChoiceCardStories from "./questionsContainer/MultipleChoiceCard.stories";
+import * as MultipleChoiceCardStories from "./questionsContainer/QuestionCardMultipleChoice.stories";
 import * as PollCardStories from "./questionsContainer/QuestionCardPoll.stories";
 
 export default {

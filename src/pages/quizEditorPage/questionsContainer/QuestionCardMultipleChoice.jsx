@@ -4,7 +4,7 @@ import QuestionIcon from "@/components/QuestionIcon";
 import QuestionCard from "./QuestionCard";
 import Option from "./questionCard/Option";
 
-export default function MultipleChoiceCard({
+export default function QuestionCardMultipleChoice({
   data: { options, ...rest },
   ...props
 }) {

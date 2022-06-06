@@ -1,14 +1,14 @@
 import React from "react";
 import { questions } from "@/utils/fakeData";
 import { questionType } from "@/constants/questionType";
-import MultipleChoiceCard from "./MultipleChoiceCard";
+import QuestionCardMultipleChoice from "./QuestionCardMultipleChoice";
 
 export default {
   title: "QuizEditor/QuestionsContainer/MultipleChoiceCard",
-  component: MultipleChoiceCard,
+  component: QuestionCardMultipleChoice,
 };
 
-const Template = (args) => <MultipleChoiceCard {...args} />;
+const Template = (args) => <QuestionCardMultipleChoice {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
