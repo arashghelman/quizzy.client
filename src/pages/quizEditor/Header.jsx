@@ -12,7 +12,7 @@ export default function Header({
 }) {
   return (
     <div className="flex flex-col gap-extra-loose">
-      <div className="flex justify-between gap-loose px-base">
+      <div className="flex justify-between gap-loose px-base w-full">
         <div className="flex flex-col gap-loose w-full">
           <div className="flex flex-col gap-base">
             <div className="flex items-center gap-loose">
@@ -30,7 +30,9 @@ export default function Header({
             <QuizSubject label="World Languages" />
           </div>
         </div>
-        <Thumbnail url={thumbnailUrl} />
+        <div className="self-center">
+          <Thumbnail url={thumbnailUrl} />
+        </div>
       </div>
       <ToolBar />
     </div>
