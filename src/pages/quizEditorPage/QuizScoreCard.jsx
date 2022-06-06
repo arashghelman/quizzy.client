@@ -1,9 +1,9 @@
 import React from "react";
-import { useScore } from "./scoreCard/useScore";
-import ProgressBar from "./scoreCard/ProgressBar";
-import Tip from "./scoreCard/Tip";
+import { useScore } from "./quizScoreCard/useScore";
+import ProgressBar from "./quizScoreCard/ProgressBar";
+import Tip from "./quizScoreCard/Tip";
 
-export default function ScoreCard({
+export default function QuizScoreCard({
   quizState: { hasName, hasGrades, hasDescription, hasQuestions, isPublic },
 }) {
   const tips = [

@@ -1,9 +1,9 @@
 import React from "react";
-import ScoreCard from "./ScoreCard";
+import QuizScoreCard from "./QuizScoreCard";
 
 export default {
   title: "QuizEditor/ScoreCard",
-  component: ScoreCard,
+  component: QuizScoreCard,
   argTypes: {
     quizState: {
       defaultValue: {
@@ -18,6 +18,6 @@ export default {
   },
 };
 
-const Template = (args) => <ScoreCard {...args} />;
+const Template = (args) => <QuizScoreCard {...args} />;
 
 export const Default = Template.bind({});

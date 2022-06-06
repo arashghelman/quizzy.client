@@ -4,7 +4,7 @@ import { DndProvider } from "react-dnd";
 import { quiz, quizState, questions } from "@/utils/fakeData";
 import QuizEditorHeader from "./quizEditorPage/QuizEditorHeader";
 import QuestionsContainer from "./quizEditorPage/QuestionsContainer";
-import ScoreCard from "./quizEditorPage/ScoreCard";
+import QuizScoreCard from "./quizEditorPage/QuizScoreCard";
 
 export default function QuizEditorPage() {
   return (
@@ -15,7 +15,7 @@ export default function QuizEditorPage() {
           <QuestionsContainer questions={questions} />
         </DndProvider>
         <div className="w-1/3">
-          <ScoreCard quizState={quizState} />
+          <QuizScoreCard quizState={quizState} />
         </div>
       </div>
     </div>
