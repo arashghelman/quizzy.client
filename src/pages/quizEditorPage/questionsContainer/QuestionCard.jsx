@@ -1,18 +1,19 @@
 import React from "react";
 import { useDragDrop } from "./questionCard/useDragDrop";
-import Header from "./questionCard/Header";
-import MoveBar from "./questionCard/MoveBar";
+import CardHeader from "./questionCard/CardHeader";
+import CardMoveBar from "./questionCard/CardMoveBar";
 import ActionBar from "./questionCard/ActionBar";
-import CollapseButton from "./questionCard/CollapseButton";
+import CardToggleCollapseButton from "./questionCard/CardToggleCollapseButton";
 
 export default function QuestionCard({
   config: { color, icon, buttons },
-  data: { id, title, index, optionsElement },
+  data: { id, title, index },
+  optionsList,
   isCollapsed,
   onSetCollapse,
   onMove,
 }) {
-  const [ref, isDragging, isDraggable, toggleIsDraggable] = useDragDrop(
+  const { ref, isDragging, canDrag, toggleCanDrag } = useDragDrop(
     { id, index },
     onMove
   );
@@ -20,33 +21,29 @@ export default function QuestionCard({
   return (
     <div
       ref={ref}
-      onDragStart={() => onSetCollapse(true)}
+      onDragStart={() => canDrag && onSetCollapse(true)}
       className={`flex ${isDragging ? "opacity-50" : "opacity-100"}`}
     >
-      <MoveBar
+      <CardMoveBar
         cursor={isDragging ? "cursor-grabbing" : "cursor-grab"}
         color={color}
-        isHovered={isDraggable}
-        onHover={toggleIsDraggable}
+        isHovered={canDrag}
+        onHover={toggleCanDrag}
       />
       <div className="border-t-1 border-b-1 border-r-1 rounded-r-lg left-tight w-full bg-white">
         <div className="flex flex-col gap-loose p-loose pl-extra-loose">
           <div className="flex justify-between items-start">
-            <Header
-              icon={icon}
-              color={color}
-              data={{ title, number: ++index }}
-            />
+            <CardHeader icon={icon} data={{ title, number: ++index }} />
             {!isDragging && <ActionBar buttons={buttons} />}
           </div>
           {!isCollapsed && (
             <div role="list" className="flex flex-col gap-base">
-              {optionsElement}
+              {optionsList}
             </div>
           )}
         </div>
         <div className={isDragging ? "invisible" : "visible"}>
-          <CollapseButton
+          <CardToggleCollapseButton
             isCollapsed={isCollapsed}
             onClick={() => onSetCollapse(!isCollapsed)}
           />
