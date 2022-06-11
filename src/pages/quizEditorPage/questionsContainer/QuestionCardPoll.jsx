@@ -1,8 +1,8 @@
 import React from "react";
 import { questionType } from "@/constants/questionType";
-import { useResults } from "./questionCardPoll/useResults";
+import { usePollResults } from "./questionCardPoll/usePollResults";
 import QuestionCard from "./QuestionCard";
-import Option from "./questionCard/Option";
+import OptionLabel from "./questionCard/OptionLabel";
 import PollResultsBar from "./questionCardPoll/PollResultsBar";
 import CardButton from "./questionCard/CardButton";
 import QuestionIcon from "@/components/QuestionIcon";
@@ -10,23 +10,12 @@ import ShowIcon from "remixicon-react/EyeLineIcon";
 import HideIcon from "remixicon-react/EyeOffLineIcon";
 
 export default function QuestionCardPoll({
-  data: { id, options, ...rest },
+  data: { options, ...rest },
   onSetCollapse,
   ...props
 }) {
-  const [pollOptions, isShowingResults, showResults, hideResults] =
-    useResults(options);
-
-  const optionsElement = pollOptions.map((opt) => (
-    <div key={opt.id} className="flex flex-col gap-1">
-      <Option color="bg-blue-400">{opt.value}</Option>
-      {isShowingResults && (
-        <div className="ml-6">
-          <PollResultsBar value={opt.result} />
-        </div>
-      )}
-    </div>
-  ));
+  const { pollOptions, isShowingResults, showResults, hideResults } =
+    usePollResults(options);
 
   const handleShowResults = () => {
     showResults();
@@ -57,7 +46,17 @@ export default function QuestionCardPoll({
         color: "bg-blue-base",
         buttons,
       }}
-      data={{ id, optionsElement, ...rest }}
+      data={{ ...rest }}
+      optionsList={pollOptions.map((opt) => (
+        <div key={opt.id} className="flex flex-col gap-extra-tight">
+          <OptionLabel color="bg-blue-400" label={opt.value} />
+          {isShowingResults && (
+            <div className="ml-6">
+              <PollResultsBar value={opt.result} />
+            </div>
+          )}
+        </div>
+      ))}
       onSetCollapse={handleSetCollapse}
       {...props}
     />
