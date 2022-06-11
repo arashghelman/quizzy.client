@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 export function useContainer(initialValue) {
   const [items, setItems] = useState([]);
-
   const [prevItems, setPrevItems] = useState([]);
 
   useEffect(() => {
@@ -53,11 +52,11 @@ export function useContainer(initialValue) {
 
   const revertReorder = () => setItems(prevItems);
 
-  return [
+  return {
     items,
     setIsItemCollapsed,
     setAreItemsCollapsed,
     moveItem,
     revertReorder,
-  ];
+  };
 }
