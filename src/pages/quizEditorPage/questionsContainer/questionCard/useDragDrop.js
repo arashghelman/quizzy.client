@@ -6,20 +6,20 @@ export function useDragDrop(initialItem, dropCallback) {
 
   const ref = useRef(null);
 
-  const [isDraggable, setIsDraggable] = useState(false);
+  const [canDragState, setCanDragState] = useState(false);
+  const toggleCanDrag = () => setCanDragState((prev) => !prev);
 
-  const toggleIsDraggable = () => setIsDraggable((prev) => !prev);
-
-  const [{ isDragging }, drag] = useDrag(
+  const [{ isDragging, canDrag }, drag] = useDrag(
     () => ({
       type: itemType,
       item: initialItem,
-      canDrag: isDraggable,
+      canDrag: canDragState,
       collect: (monitor) => ({
         isDragging: initialItem.id === monitor.getItem()?.id,
+        canDrag: canDragState,
       }),
     }),
-    [isDraggable]
+    [canDragState]
   );
 
   const [, drop] = useDrop(() => ({
@@ -52,5 +52,5 @@ export function useDragDrop(initialItem, dropCallback) {
 
   drag(drop(ref));
 
-  return [ref, isDragging, isDraggable, toggleIsDraggable];
+  return { ref, isDragging, canDrag, toggleCanDrag };
 }
