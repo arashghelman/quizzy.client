@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Header({ icon, data: { title, number } }) {
+export default function CardHeader({ icon, data: { title, number } }) {
   return (
     <div className="flex items-center text-gray-base gap-base">
       {icon}
