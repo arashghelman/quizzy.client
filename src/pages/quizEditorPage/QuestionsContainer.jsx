@@ -6,18 +6,20 @@ import { useContainer } from "./questionsContainer/useContainer";
 import QuestionCardMultipleChoice from "./questionsContainer/QuestionCardMultipleChoice";
 import QuestionCardPoll from "./questionsContainer/QuestionCardPoll";
 import DragDropBar from "./questionsContainer/DragDropBar";
-import CollapseAllButton from "./questionsContainer/CollapseAllButton";
-import AddQuestionButton from "./questionsContainer/AddQuestionButton";
+import ContainerToggleCollapseButton from "./questionsContainer/ContainerToggleCollapseButton";
+import QuestionAddButton from "./questionsContainer/QuestionAddButton";
 import QuestionTypeMenu from "./questionsContainer/QuestionTypeMenu";
 
 export default function QuestionsContainer({ questions }) {
-  const [
+  const {
     items,
     setIsItemCollapsed,
     setAreItemsCollapsed,
     moveItem,
     revertReorder,
-  ] = useContainer(questions);
+  } = useContainer(questions);
+
+  const areItemsCollapsed = items.every((itm) => itm.isCollapsed);
 
   const { isDragging } = useDragLayer((monitor) => ({
     isDragging: monitor.isDragging(),
@@ -27,7 +29,16 @@ export default function QuestionsContainer({ questions }) {
 
   useEffect(() => isDragging && setIsShowingBar(true), [isDragging]);
 
-  const questionsList = items.map((itm, index) => {
+  const handleCancelReorder = () => {
+    revertReorder();
+    setIsShowingBar(false);
+  };
+
+  const handleSaveReorder = () => setIsShowingBar(false);
+
+  const [isShowingTypeMenu, setIsShowingTypeMenu] = useState(false);
+
+  const questionCards = items.map((itm, index) => {
     const { id, title, type, options, isCollapsed } = itm;
 
     const props = {
@@ -50,36 +61,23 @@ export default function QuestionsContainer({ questions }) {
     }
   });
 
-  const areItemsCollapsed = items.every((itm) => itm.isCollapsed);
-
-  const handleCancelReorder = () => {
-    revertReorder();
-    setIsShowingBar(false);
-  };
-
-  const handleSaveReorder = () => {
-    setIsShowingBar(false);
-  };
-
-  const [isShowingTypeMenu, setIsShowingTypeMenu] = useState(false);
-
   return (
     <>
-      <div className="flex flex-col w-full">
-        <div className="flex gap-base self-end mb-2 relative">
+      <div className="flex flex-col w-full pb-16">
+        <div className="flex gap-base self-end mb-tight relative">
           <div>
-            <AddQuestionButton
+            <QuestionAddButton
               onClick={() => setIsShowingTypeMenu((prev) => !prev)}
             />
             {isShowingTypeMenu && <QuestionTypeMenu />}
           </div>
-          <CollapseAllButton
+          <ContainerToggleCollapseButton
             label={areItemsCollapsed ? "Expand All" : "Collapse All"}
             onClick={() => setAreItemsCollapsed(!areItemsCollapsed)}
           />
         </div>
-        <div role="list" className="flex flex-col gap-base w-full pb-16">
-          {questionsList}
+        <div role="list" className="flex flex-col gap-base w-full">
+          {questionCards}
         </div>
       </div>
       {isShowingBar && (
