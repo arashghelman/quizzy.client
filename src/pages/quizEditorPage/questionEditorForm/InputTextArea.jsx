@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function FormInputTextArea({ placeholder }) {
+export default function InputTextArea({ placeholder }) {
   return (
     <textarea
       placeholder={placeholder}

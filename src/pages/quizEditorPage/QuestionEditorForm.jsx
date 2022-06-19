@@ -1,6 +1,6 @@
 import React from "react";
 import QuestionTypeDropDownMenu from "./questionEditorForm/QuestionTypeDropDownMenu";
-import FormInputTextArea from "./questionEditorForm/FormInputTextArea";
+import InputTextArea from "./questionEditorForm/InputTextArea";
 import OptionInputGroup from "./questionEditorForm/OptionInputGroup";
 import Button from "@/components/Button";
 import BlankSpaceIcon from "remixicon-react/SpaceIcon";
@@ -25,7 +25,7 @@ export default function QuestionEditorForm() {
             <BlankSpaceIcon />
             Insert blank space
           </Button>
-          <FormInputTextArea placeholder="Type your question here..." />
+          <InputTextArea placeholder="Type your question here..." />
         </div>
         <div className="grid grid-cols-4 gap-tight w-full">
           <OptionInputGroup bgColor="bg-amber-base" />

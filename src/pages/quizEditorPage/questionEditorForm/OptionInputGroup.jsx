@@ -1,5 +1,5 @@
 import React from "react";
-import FormInputTextArea from "./FormInputTextArea";
+import InputTextArea from "./InputTextArea";
 import OptionInputRadio from "./optionInputGroup/OptionInputRadio";
 
 export default function OptionInputGroup({ bgColor }) {
@@ -9,7 +9,7 @@ export default function OptionInputGroup({ bgColor }) {
         <OptionInputRadio />
       </div>
       <div className="flex justify-center px-base">
-        <FormInputTextArea placeholder="Type an answer option here..." />
+        <InputTextArea placeholder="Type an answer option here..." />
       </div>
     </div>
   );
