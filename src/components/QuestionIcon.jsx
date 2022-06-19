@@ -5,50 +5,35 @@ import PollIcon from "remixicon-react/ChatPollLineIcon";
 import { questionType } from "@/constants/questionType";
 
 export default function QuestionIcon({ type, size = "base" }) {
-  let sizeConfig = {
-    iconSize: "",
-    width: "",
-    height: "",
+  const sizeConfig = {
+    base: { iconSize: "w-base", width: "w-12", height: "h-12" },
+    sm: { iconSize: "w-xs", width: "w-7", height: "h-7" },
   };
-  switch (size) {
-    case "base":
-      sizeConfig = { iconSize: "w-base", width: "w-12", height: "h-12" };
-      break;
 
-    case "sm":
-      sizeConfig = { iconSize: "w-xs", width: "w-7", height: "h-7" };
-      break;
+  const { iconSize, width, height } = sizeConfig[size];
 
-    default:
-      break;
-  }
+  const typeConfig = (() => {
+    switch (type) {
+      case questionType.MULTIPLE_CHOICE:
+        return {
+          icon: <MultipleChoiceIcon className={iconSize} />,
+          color: "bg-amber-base",
+        };
 
-  let typeConfig = {
-    icon: null,
-    color: "",
-  };
-  switch (type) {
-    case questionType.MULTIPLE_CHOICE:
-      typeConfig = {
-        icon: <MultipleChoiceIcon className={sizeConfig.iconSize} />,
-        color: "bg-amber-base",
-      };
-      break;
+      case questionType.POLL:
+        return {
+          icon: <PollIcon className={iconSize} />,
+          color: "bg-blue-base",
+        };
 
-    case questionType.POLL:
-      typeConfig = {
-        icon: <PollIcon className={sizeConfig.iconSize} />,
-        color: "bg-blue-base",
-      };
-      break;
-
-    default:
-      throw new Error("No match was found for the type.");
-  }
+      default:
+        throw new Error("No match was found for the type");
+    }
+  })();
 
   return (
     <div
-      className={`${typeConfig.color} ${sizeConfig.width} ${sizeConfig.height}
+      className={`${typeConfig.color} ${width} ${height}
         flex justify-center items-center rounded text-gray-base`}
     >
       {typeConfig.icon}

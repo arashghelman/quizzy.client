@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function QuizStatusLabel({ label }) {
+export default function QuizStatusLabel({ label = "Draft" }) {
   const bgColors = {
     Public: "bg-emerald-light-2",
     Draft: "bg-amber-base",

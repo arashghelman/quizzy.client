@@ -2,7 +2,10 @@ import React from "react";
 import { useDragDrop } from "./questionCard/useDragDrop";
 import CardHeader from "./questionCard/CardHeader";
 import CardMoveBar from "./questionCard/CardMoveBar";
-import ActionBar from "./questionCard/ActionBar";
+import CardButton from "./questionCard/CardButton";
+import EditIcon from "remixicon-react/PencilLineIcon";
+import DuplicateIcon from "remixicon-react/FileCopyLineIcon";
+import DeleteIcon from "remixicon-react/DeleteBinLineIcon";
 import CardToggleCollapseButton from "./questionCard/CardToggleCollapseButton";
 
 export default function QuestionCard({
@@ -34,7 +37,23 @@ export default function QuestionCard({
         <div className="flex flex-col gap-loose p-loose pl-extra-loose">
           <div className="flex justify-between items-start">
             <CardHeader icon={icon} data={{ title, number: ++index }} />
-            {!isDragging && <ActionBar buttons={buttons} />}
+            {!isDragging && (
+              <div className="flex gap-2">
+                {buttons}
+                <CardButton
+                  title="Delete this question"
+                  icon={<DeleteIcon className="w-sm" />}
+                />
+                <CardButton
+                  title="Duplicate this question"
+                  icon={<DuplicateIcon className="w-sm" />}
+                />
+                <CardButton
+                  title="Edit this question"
+                  icon={<EditIcon className="w-sm" />}
+                />
+              </div>
+            )}
           </div>
           {!isCollapsed && (
             <div role="list" className="flex flex-col gap-base">

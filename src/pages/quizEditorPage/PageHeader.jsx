@@ -1,13 +1,13 @@
 import React from "react";
 import Heading from "../../components/Heading";
-import QuizDescriptionParagraph from "./quizEditorHeader/QuizDescriptionParagraph";
-import QuizThumbnail from "./quizEditorHeader/QuizThumbnail";
-import QuizSubjectTag from "./quizEditorHeader/QuizSubjectTag";
-import ToolBar from "./quizEditorHeader/ToolBar";
-import QuizStatusLabel from "./quizEditorHeader/QuizStatusLabel";
-import Chapter from "./quizEditorHeader/Chapter";
+import QuizThumbnail from "./pageHeader/QuizThumbnail";
+import QuizSubjectTag from "./pageHeader/QuizSubjectTag";
+import QuizStatusLabel from "./pageHeader/QuizStatusLabel";
+import EditIcon from "remixicon-react/PencilLineIcon";
+import SettingsIcon from "remixicon-react/Settings5LineIcon";
+import Button from "@/components/Button";
 
-export default function QuizEditorHeader({
+export default function PageHeader({
   data: { name, status, description, thumbnailUrl },
 }) {
   return (
@@ -21,9 +21,9 @@ export default function QuizEditorHeader({
                 <QuizStatusLabel label={status.type} />
               </div>
             </div>
-            <Chapter number="1" total="2" />
+            <span className="text-gray-base font-semibold">Chapter 1 of 2</span>
           </div>
-          <QuizDescriptionParagraph text={description} />
+          <p className="w-full text-gray-base leading-8">{description}</p>
           <div className="flex gap-tight">
             <QuizSubjectTag label="English" />
             <QuizSubjectTag label="Fun" />
@@ -34,7 +34,16 @@ export default function QuizEditorHeader({
           <QuizThumbnail url={thumbnailUrl} />
         </div>
       </div>
-      <ToolBar />
+      <div className="flex gap-extra-loose border-t-1 border-b-1 px-base py-5">
+        <Button variant="text-gray-light-2 hover:text-gray-light-2/70">
+          <EditIcon className="w-sm" />
+          Edit
+        </Button>
+        <Button variant="text-gray-light-2 hover:text-gray-light-2/70">
+          <SettingsIcon className="w-sm" />
+          Settings
+        </Button>
+      </div>
     </div>
   );
 }

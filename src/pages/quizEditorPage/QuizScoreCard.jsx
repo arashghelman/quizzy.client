@@ -1,7 +1,7 @@
 import React from "react";
 import { useScore } from "./quizScoreCard/useScore";
 import ScoreProgressBar from "./quizScoreCard/ScoreProgressBar";
-import ScoreTipItem from "./quizScoreCard/ScoreTipItem";
+import TipLabel from "./quizScoreCard/TipLabel";
 
 export default function QuizScoreCard({
   quizState: { hasName, hasGrades, hasDescription, hasQuestions, isPublic },
@@ -30,7 +30,7 @@ export default function QuizScoreCard({
       </div>
       <div role="list" className="flex flex-col gap-base">
         {tips.map(({ label, isDone }) => (
-          <ScoreTipItem key={label} label={label} isDone={isDone} />
+          <TipLabel key={label} label={label} isDone={isDone} />
         ))}
       </div>
     </div>

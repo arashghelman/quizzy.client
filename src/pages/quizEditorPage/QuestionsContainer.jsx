@@ -6,9 +6,9 @@ import { useContainer } from "./questionsContainer/useContainer";
 import QuestionCardMultipleChoice from "./questionsContainer/QuestionCardMultipleChoice";
 import QuestionCardPoll from "./questionsContainer/QuestionCardPoll";
 import DragDropBar from "./questionsContainer/DragDropBar";
-import ContainerToggleCollapseButton from "./questionsContainer/ContainerToggleCollapseButton";
-import QuestionAddButton from "./questionsContainer/QuestionAddButton";
-import QuestionTypeMenu from "./questionsContainer/QuestionTypeMenu";
+import QuestionTypeMenuList from "@/components/QuestionTypeMenuList";
+import Button from "@/components/Button";
+import AddIcon from "remixicon-react/AddLineIcon";
 
 export default function QuestionsContainer({ questions }) {
   const {
@@ -66,15 +66,21 @@ export default function QuestionsContainer({ questions }) {
       <div className="flex flex-col w-full pb-16">
         <div className="flex gap-base self-end mb-tight relative">
           <div>
-            <QuestionAddButton
+            <Button
+              variant="text-sky-base hover:text-sky-base/70"
               onClick={() => setIsShowingTypeMenu((prev) => !prev)}
-            />
-            {isShowingTypeMenu && <QuestionTypeMenu />}
+            >
+              <AddIcon className="w-sm" />
+              Add Question
+            </Button>
+            {isShowingTypeMenu && <QuestionTypeMenuList />}
           </div>
-          <ContainerToggleCollapseButton
-            label={areItemsCollapsed ? "Expand All" : "Collapse All"}
+          <Button
+            variant="text-sky-base hover:text-sky-base/70"
             onClick={() => setAreItemsCollapsed(!areItemsCollapsed)}
-          />
+          >
+            {areItemsCollapsed ? "Expand All" : "Collapse All"}
+          </Button>
         </div>
         <div role="list" className="flex flex-col gap-base w-full">
           {questionCards}

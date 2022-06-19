@@ -1,12 +1,7 @@
 import React from "react";
-import ScoreTipItem from "./ScoreTipItem";
+import TipLabel from "./TipLabel";
 
-export default {
-  title: "QuizEditor/ScoreCard/Tip",
-  component: ScoreTipItem,
-};
-
-const Template = (args) => <ScoreTipItem {...args} />;
+const Template = (args) => <TipLabel {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -18,4 +13,9 @@ export const Done = Template.bind({});
 Done.args = {
   isDone: true,
   label: Default.args.label,
+};
+
+export default {
+  title: "Pages/Quiz Editor/Tags & Labels/Tip Label",
+  component: TipLabel,
 };

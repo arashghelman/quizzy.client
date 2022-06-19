@@ -4,7 +4,7 @@ import * as MultipleChoiceCardStories from "./questionsContainer/QuestionCardMul
 import * as PollCardStories from "./questionsContainer/QuestionCardPoll.stories";
 
 export default {
-  title: "QuizEditor/QuestionsContainer",
+  title: "Pages/Quiz Editor/Containers/Questions Container",
   component: QuestionsContainer,
 };
 
