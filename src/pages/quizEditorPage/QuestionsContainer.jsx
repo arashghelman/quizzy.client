@@ -6,11 +6,10 @@ import { useContainer } from "./questionsContainer/useContainer";
 import QuestionCardMultipleChoice from "./questionsContainer/QuestionCardMultipleChoice";
 import QuestionCardPoll from "./questionsContainer/QuestionCardPoll";
 import DragDropBar from "./questionsContainer/DragDropBar";
-import QuestionTypeMenuList from "@/components/QuestionTypeMenuList";
 import Button from "@/components/Button";
 import AddIcon from "remixicon-react/AddLineIcon";
 
-export default function QuestionsContainer({ questions }) {
+export default function QuestionsContainer({ questions, onClickAddQuestion }) {
   const {
     items,
     setIsItemCollapsed,
@@ -20,23 +19,6 @@ export default function QuestionsContainer({ questions }) {
   } = useContainer(questions);
 
   const areItemsCollapsed = items.every((itm) => itm.isCollapsed);
-
-  const { isDragging } = useDragLayer((monitor) => ({
-    isDragging: monitor.isDragging(),
-  }));
-
-  const [isShowingBar, setIsShowingBar] = useState(false);
-
-  useEffect(() => isDragging && setIsShowingBar(true), [isDragging]);
-
-  const handleCancelReorder = () => {
-    revertReorder();
-    setIsShowingBar(false);
-  };
-
-  const handleSaveReorder = () => setIsShowingBar(false);
-
-  const [isShowingTypeMenu, setIsShowingTypeMenu] = useState(false);
 
   const questionCards = items.map((itm, index) => {
     const { id, title, type, options, isCollapsed } = itm;
@@ -61,19 +43,26 @@ export default function QuestionsContainer({ questions }) {
     }
   });
 
+  const { isDragging } = useDragLayer((monitor) => ({
+    isDragging: monitor.isDragging(),
+  }));
+
+  const [isDragBarOpen, setIsDragBarOpen] = useState(false);
+
+  useEffect(() => isDragging && setIsDragBarOpen(true), [isDragging]);
+
   return (
     <>
       <div className="flex flex-col w-full pb-16">
-        <div className="flex gap-base self-end mb-tight relative">
+        <div className="flex gap-3 self-end mb-2 relative">
           <div>
             <Button
-              variant="text-sky-base hover:text-sky-base/70"
-              onClick={() => setIsShowingTypeMenu((prev) => !prev)}
+              variant="gap-1 text-sky-base hover:text-sky-base/70"
+              onClick={onClickAddQuestion}
             >
-              <AddIcon className="w-sm" />
+              <AddIcon className="w-4" />
               Add Question
             </Button>
-            {isShowingTypeMenu && <QuestionTypeMenuList />}
           </div>
           <Button
             variant="text-sky-base hover:text-sky-base/70"
@@ -82,14 +71,17 @@ export default function QuestionsContainer({ questions }) {
             {areItemsCollapsed ? "Expand All" : "Collapse All"}
           </Button>
         </div>
-        <div role="list" className="flex flex-col gap-base w-full">
+        <div role="list" className="flex flex-col gap-4 w-full">
           {questionCards}
         </div>
       </div>
-      {isShowingBar && (
+      {isDragBarOpen && (
         <DragDropBar
-          onSave={handleSaveReorder}
-          onCancel={handleCancelReorder}
+          onSave={() => setIsDragBarOpen(false)}
+          onCancel={() => {
+            revertReorder();
+            setIsDragBarOpen(false);
+          }}
         />
       )}
     </>

@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .TextField:not(:placeholder-shown) ~ .Label {
+    @apply transform origin-left -translate-y-[0.7rem] scale-75;
+  }
+}

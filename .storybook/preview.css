@@ -7,3 +7,7 @@
     @apply font-nunito;
   }
 }
+
+* {
+  box-sizing: border-box;
+}

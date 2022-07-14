@@ -29,8 +29,18 @@ module.exports = {
           base: "#0ea5e9",
           "light-1": "#e0f2fe",
         },
+        pink: {
+          base: "#f472b6",
+        },
       },
       width: {
+        lg: "2rem",
+        base: "1.3rem",
+        sm: "1.1rem",
+        xs: "1rem",
+      },
+      height: {
+        lg: "2rem",
         base: "1.3rem",
         sm: "1.1rem",
         xs: "1rem",
@@ -40,7 +50,7 @@ module.exports = {
         tight: "0.5rem",
         base: "1rem",
         loose: "1.25rem",
-        "extra-loose": "1.625rem",
+        "extra-loose": "2rem",
       },
       borderWidth: {
         1: "1px",

@@ -4,28 +4,68 @@ import { DndProvider } from "react-dnd";
 import { quiz, quizState, questions } from "@/utils/fakeData";
 import PageHeader from "./quizEditorPage/PageHeader";
 import QuestionsContainer from "./quizEditorPage/QuestionsContainer";
-import QuizScoreCard from "./quizEditorPage/QuizScoreCard";
-import Backdrop from "@/components/Backdrop";
+import ScoreCard from "./quizEditorPage/ScoreCard";
+import Modal from "@/components/Modal";
+import QuizFormEdit from "./quizEditorPage/QuizFormEdit";
+import QuizFormSettings from "./quizEditorPage/QuizFormSettings";
 import QuestionEditorForm from "./quizEditorPage/QuestionEditorForm";
 
 export default function QuizEditorPage() {
-  const [isShowingQuestionEditor, setIsShowingQuestionEditor] = useState(false);
+  const [modal, setModal] = useState({
+    isOpen: false,
+    heading: "",
+    content: null,
+  });
+
+  const handleCloseModal = () => {
+    setModal({ isOpen: false, heading: "", content: null });
+  };
+
+  const [isQuestionEditorOpen, setIsQuestionEditorOpen] = useState(false);
+
   return (
-    <div className="flex flex-col gap-extra-loose">
-      <PageHeader data={quiz} />
-      <div className="flex gap-loose px-4">
+    <div className="flex flex-col gap-7">
+      <PageHeader
+        data={quiz}
+        onClickEdit={() => {
+          setModal({
+            isOpen: true,
+            heading: "Edit quiz",
+            content: <QuizFormEdit onClickCancel={handleCloseModal} />,
+          });
+        }}
+        onClickSettings={() => {
+          setModal({
+            isOpen: true,
+            heading: "Quiz settings",
+            content: <QuizFormSettings onClickCancel={handleCloseModal} />,
+          });
+        }}
+      />
+      <div className="flex gap-5">
         <DndProvider backend={HTML5Backend}>
-          <QuestionsContainer questions={questions} />
+          <QuestionsContainer
+            questions={questions}
+            onClickAddQuestion={() => setIsQuestionEditorOpen(true)}
+          />
         </DndProvider>
         <div className="w-1/3">
-          <QuizScoreCard quizState={quizState} />
+          <ScoreCard quizState={quizState} />
         </div>
       </div>
-      {isShowingQuestionEditor && (
-        <Backdrop>
-          <QuestionEditorForm />
-        </Backdrop>
+      {modal.isOpen && (
+        <Modal
+          heading={modal.heading}
+          width="w-[35%]"
+          onClickClose={handleCloseModal}
+        >
+          {modal.content}
+        </Modal>
       )}
+      <QuestionEditorForm
+        isOpen={isQuestionEditorOpen}
+        onClickCancel={() => setIsQuestionEditorOpen(false)}
+      />
     </div>
   );
 }

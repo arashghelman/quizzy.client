@@ -1,6 +1,11 @@
 import React from "react";
 import TipLabel from "./TipLabel";
 
+export default {
+  title: "Pages/Quiz Editor/Tags & Labels/Tip Label",
+  component: TipLabel,
+};
+
 const Template = (args) => <TipLabel {...args} />;
 
 export const Default = Template.bind({});
@@ -13,9 +18,4 @@ export const Done = Template.bind({});
 Done.args = {
   isDone: true,
   label: Default.args.label,
-};
-
-export default {
-  title: "Pages/Quiz Editor/Tags & Labels/Tip Label",
-  component: TipLabel,
 };

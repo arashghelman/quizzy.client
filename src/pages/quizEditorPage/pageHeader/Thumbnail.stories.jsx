@@ -1,9 +1,9 @@
 import React from "react";
-import QuizThumbnail from "./QuizThumbnail";
+import Thumbnail from "./Thumbnail";
 
 export default {
-  title: "QuizEditor/Header/Thumbnail",
-  component: QuizThumbnail,
+  title: "Pages/Quiz Editor/Other/Thumbnail",
+  component: Thumbnail,
   argTypes: {
     url: {
       defaultValue:
@@ -12,6 +12,6 @@ export default {
   },
 };
 
-const Template = (args) => <QuizThumbnail {...args} />;
+const Template = (args) => <Thumbnail {...args} />;
 
 export const Default = Template.bind({});

@@ -6,11 +6,15 @@ import CardButton from "./questionCard/CardButton";
 import EditIcon from "remixicon-react/PencilLineIcon";
 import DuplicateIcon from "remixicon-react/FileCopyLineIcon";
 import DeleteIcon from "remixicon-react/DeleteBinLineIcon";
-import CardToggleCollapseButton from "./questionCard/CardToggleCollapseButton";
+import CollapseIcon from "remixicon-react/ArrowUpSLineIcon";
+import ExpandIcon from "remixicon-react/ArrowDownSLineIcon";
+import Button from "@/components/Button";
 
 export default function QuestionCard({
-  config: { color, icon, buttons },
   data: { id, title, index },
+  barColor,
+  icon,
+  buttons,
   optionsList,
   isCollapsed,
   onSetCollapse,
@@ -29,12 +33,12 @@ export default function QuestionCard({
     >
       <CardMoveBar
         cursor={isDragging ? "cursor-grabbing" : "cursor-grab"}
-        color={color}
+        color={barColor}
         isHovered={canDrag}
         onHover={toggleCanDrag}
       />
-      <div className="border-t-1 border-b-1 border-r-1 rounded-r-lg left-tight w-full bg-white">
-        <div className="flex flex-col gap-loose p-loose pl-extra-loose">
+      <div className="border-t-1 border-b-1 border-r-1 rounded-r-lg w-full bg-white">
+        <div className="flex flex-col gap-5 p-5 pl-8">
           <div className="flex justify-between items-start">
             <CardHeader icon={icon} data={{ title, number: ++index }} />
             {!isDragging && (
@@ -42,31 +46,37 @@ export default function QuestionCard({
                 {buttons}
                 <CardButton
                   title="Delete this question"
-                  icon={<DeleteIcon className="w-sm" />}
+                  icon={<DeleteIcon className="w-[1.2rem]" />}
                 />
                 <CardButton
                   title="Duplicate this question"
-                  icon={<DuplicateIcon className="w-sm" />}
+                  icon={<DuplicateIcon className="w-[1.2rem]" />}
                 />
                 <CardButton
                   title="Edit this question"
-                  icon={<EditIcon className="w-sm" />}
+                  icon={<EditIcon className="w-[1.2rem]" />}
                 />
               </div>
             )}
           </div>
           {!isCollapsed && (
-            <div role="list" className="flex flex-col gap-base">
+            <div role="list" className="grid grid-cols-2 gap-4">
               {optionsList}
             </div>
           )}
         </div>
-        <div className={isDragging ? "invisible" : "visible"}>
-          <CardToggleCollapseButton
-            isCollapsed={isCollapsed}
-            onClick={() => onSetCollapse(!isCollapsed)}
-          />
-        </div>
+        <Button
+          onClick={() => onSetCollapse(!isCollapsed)}
+          variant={`w-full flex justify-center py-1 text-gray-400 hover:bg-gray-100 ${
+            isDragging ? "invisible" : "visible"
+          }`}
+        >
+          {isCollapsed ? (
+            <ExpandIcon className="w-6" />
+          ) : (
+            <CollapseIcon className="w-6" />
+          )}
+        </Button>
       </div>
     </div>
   );

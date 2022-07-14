@@ -1,46 +1,52 @@
 import React from "react";
-import Heading from "../../components/Heading";
-import QuizThumbnail from "./pageHeader/QuizThumbnail";
-import QuizSubjectTag from "./pageHeader/QuizSubjectTag";
-import QuizStatusLabel from "./pageHeader/QuizStatusLabel";
+import Thumbnail from "./pageHeader/Thumbnail";
+import SubjectTag from "./pageHeader/SubjectTag";
+import StatusLabel from "./pageHeader/StatusLabel";
 import EditIcon from "remixicon-react/PencilLineIcon";
 import SettingsIcon from "remixicon-react/Settings5LineIcon";
 import Button from "@/components/Button";
 
 export default function PageHeader({
   data: { name, status, description, thumbnailUrl },
+  onClickEdit,
+  onClickSettings,
 }) {
   return (
-    <div className="flex flex-col gap-extra-loose">
-      <div className="flex justify-between gap-loose px-base w-full">
-        <div className="flex flex-col gap-loose w-full">
-          <div className="flex flex-col gap-base">
-            <div className="flex items-center gap-loose">
-              <Heading text={name} />
+    <div className="flex flex-col gap-5">
+      <div className="flex justify-between gap-5 w-full">
+        <div className="flex flex-col gap-5 w-full">
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-5">
+              <h1 className="font-bold text-3xl text-gray-base">{name}</h1>
               <div>
-                <QuizStatusLabel label={status.type} />
+                <StatusLabel label={status.type} />
               </div>
             </div>
-            <span className="text-gray-base font-semibold">Chapter 1 of 2</span>
           </div>
           <p className="w-full text-gray-base leading-8">{description}</p>
-          <div className="flex gap-tight">
-            <QuizSubjectTag label="English" />
-            <QuizSubjectTag label="Fun" />
-            <QuizSubjectTag label="World Languages" />
+          <div className="flex gap-2">
+            <SubjectTag label="English" />
+            <SubjectTag label="Fun" />
+            <SubjectTag label="World Languages" />
           </div>
         </div>
         <div className="self-center">
-          <QuizThumbnail url={thumbnailUrl} />
+          <Thumbnail url={thumbnailUrl} onClick={onClickSettings} />
         </div>
       </div>
-      <div className="flex gap-extra-loose border-t-1 border-b-1 px-base py-5">
-        <Button variant="text-gray-light-2 hover:text-gray-light-2/70">
-          <EditIcon className="w-sm" />
+      <div className="flex gap-6 border-t-1 border-b-1 px-2 py-5">
+        <Button
+          variant="text-gray-light-2 hover:text-gray-light-2/70"
+          onClick={onClickEdit}
+        >
+          <EditIcon className="w-5" />
           Edit
         </Button>
-        <Button variant="text-gray-light-2 hover:text-gray-light-2/70">
-          <SettingsIcon className="w-sm" />
+        <Button
+          variant="text-gray-light-2 hover:text-gray-light-2/70"
+          onClick={onClickSettings}
+        >
+          <SettingsIcon className="w-5" />
           Settings
         </Button>
       </div>

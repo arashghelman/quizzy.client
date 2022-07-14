@@ -74,3 +74,24 @@ export const quizState = {
   hasQuestions: questions.length >= 4,
   isPublic: quiz.status.type === "Public",
 };
+
+export const subjects = [
+  "Arts",
+  "Biology",
+  "Chemistry",
+  "Computers",
+  "Design",
+  "English",
+  "Fun",
+  "Geography",
+  "History",
+  "Life Skills",
+  "Mathematics",
+  "Physics",
+  "Science",
+  "Social Studies",
+  "World Languages",
+].map((sub, index) => ({
+  subjectId: ++index,
+  name: sub,
+}));

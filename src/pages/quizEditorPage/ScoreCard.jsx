@@ -3,7 +3,7 @@ import { useScore } from "./quizScoreCard/useScore";
 import ScoreProgressBar from "./quizScoreCard/ScoreProgressBar";
 import TipLabel from "./quizScoreCard/TipLabel";
 
-export default function QuizScoreCard({
+export default function ScoreCard({
   quizState: { hasName, hasGrades, hasDescription, hasQuestions, isPublic },
 }) {
   const tips = [
@@ -20,15 +20,18 @@ export default function QuizScoreCard({
   const { score, barColor } = useScore(value, max);
 
   return (
-    <div className="flex flex-col gap-loose bg-white text-gray-light-1 border-1 rounded-lg p-loose">
+    <div className="flex flex-col gap-5 bg-white text-gray-light-1 border-1 rounded-lg p-5">
       <div>
         <h1 className="font-semibold">Quiz score</h1>
       </div>
-      <div className="flex flex-col gap-tight">
-        <div className="text-2xl font-bold">{score}%</div>
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-2">
+          <div className="text-2xl font-bold">{score}%</div>
+          {score === 100 && <span className="text-lg">🎉</span>}
+        </div>
         <ScoreProgressBar value={value} max={max} color={barColor} />
       </div>
-      <div role="list" className="flex flex-col gap-base">
+      <div role="list" className="flex flex-col gap-4">
         {tips.map(({ label, isDone }) => (
           <TipLabel key={label} label={label} isDone={isDone} />
         ))}
