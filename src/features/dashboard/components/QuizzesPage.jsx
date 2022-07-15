@@ -1,9 +1,8 @@
 import React from "react";
-import Heading from "../../../components/ui/Heading";
+import Heading from "@/components/ui/Heading";
 import Button from "@/components/ui/Button";
 import QuizCard from "./QuizCard";
 import AddIcon from "remixicon-react/AddLineIcon";
-import Paragraph from "@/components/ui/Paragraph";
 
 export default function QuizzesPage() {
   return (
@@ -16,9 +15,9 @@ export default function QuizzesPage() {
             Create Quiz
           </Button>
         </div>
-        <Paragraph>
+        <p className="text-gray-500">
           Define quizzes that other players can take part in.
-        </Paragraph>
+        </p>
       </div>
       <div className="grid">
         <QuizCard />
