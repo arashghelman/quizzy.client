@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 import MoveIcon from "remixicon-react/DragMove2LineIcon";
 
 export default function CardMoveBar({ cursor, color, isHovered, onHover }) {

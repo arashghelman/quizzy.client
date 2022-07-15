@@ -6,7 +6,7 @@ import { useContainer } from "./questionsContainer/useContainer";
 import QuestionCardMultipleChoice from "./questionsContainer/QuestionCardMultipleChoice";
 import QuestionCardPoll from "./questionsContainer/QuestionCardPoll";
 import DragDropBar from "./questionsContainer/DragDropBar";
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 import AddIcon from "remixicon-react/AddLineIcon";
 
 export default function QuestionsContainer({ questions, onClickAddQuestion }) {

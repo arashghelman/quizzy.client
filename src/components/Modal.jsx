@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 import CloseIcon from "remixicon-react/CloseFillIcon";
 
 export default function Modal({ width, heading, onClickClose, children }) {

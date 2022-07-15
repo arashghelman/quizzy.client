@@ -8,7 +8,7 @@ import DuplicateIcon from "remixicon-react/FileCopyLineIcon";
 import DeleteIcon from "remixicon-react/DeleteBinLineIcon";
 import CollapseIcon from "remixicon-react/ArrowUpSLineIcon";
 import ExpandIcon from "remixicon-react/ArrowDownSLineIcon";
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 
 export default function QuestionCard({
   data: { id, title, index },

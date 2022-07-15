@@ -4,7 +4,7 @@ import SubjectTag from "./pageHeader/SubjectTag";
 import StatusLabel from "./pageHeader/StatusLabel";
 import EditIcon from "remixicon-react/PencilLineIcon";
 import SettingsIcon from "remixicon-react/Settings5LineIcon";
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 
 export default function PageHeader({
   data: { name, status, description, thumbnailUrl },

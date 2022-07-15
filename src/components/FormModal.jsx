@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 import Modal from "./Modal";
 
 export default function FormModal({ heading, children }) {

@@ -1,9 +1,9 @@
 import React from "react";
-import Heading from "./Heading";
-import Button from "@/components/Button";
-import QuizRow from "./quizzesPage/QuizRow";
+import Heading from "../../../components/ui/Heading";
+import Button from "@/components/ui/Button";
+import QuizCard from "./QuizCard";
 import AddIcon from "remixicon-react/AddLineIcon";
-import Paragraph from "./Paragraph";
+import Paragraph from "@/components/ui/Paragraph";
 
 export default function QuizzesPage() {
   return (
@@ -21,8 +21,8 @@ export default function QuizzesPage() {
         </Paragraph>
       </div>
       <div className="grid">
-        <QuizRow />
-        <QuizRow />
+        <QuizCard />
+        <QuizCard />
       </div>
     </>
   );

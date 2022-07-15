@@ -2,7 +2,7 @@ import React from "react";
 import QuizForm from "./QuizForm";
 import TextField from "./quizFormEdit/TextField";
 import SubjectCheckbox from "./quizFormEdit/SubjectCheckbox";
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 import { subjects } from "@/utils/fakeData";
 
 export default function QuizFormEdit({ onClickCancel }) {

@@ -1,6 +1,6 @@
 import React from "react";
-import QuizzesPage from "./dashboard/QuizzesPage";
-import SideNavbar from "./dashboard/SideNavbar";
+import QuizzesPage from "../features/dashboard/components/QuizzesPage";
+import SideNavbar from "./Dashboard/SideNavbar";
 
 export default function Dashboard() {
   return (

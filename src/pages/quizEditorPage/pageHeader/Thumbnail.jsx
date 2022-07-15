@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 import EditIcon from "remixicon-react/PencilLineIcon";
 
 export default function Thumbnail({ url, onClick }) {

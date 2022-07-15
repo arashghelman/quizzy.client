@@ -1,13 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import ActionsIcon from "remixicon-react/MoreFillIcon";
-import Thumbnail from "./quizRow/Thumbnail";
-import ActionsMenu from "./quizRow/ActionsMenu";
-import MenuItem from "./quizRow/MenuItem";
-import Button from "@/components/Button";
+import Thumbnail from "@/components/ui/Thumbnail";
+import Button from "@/components/ui/Button";
 
-export default function QuizRow() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+export default function QuizCard() {
   return (
     <div className="relative flex justify-between items-center cursor-pointer hover:bg-gray-100 border-b-1 border-gray-300 p-4">
       <div className="flex gap-4">
@@ -22,12 +18,6 @@ export default function QuizRow() {
       <Button variant="primary" customStyle="w-8 h-8">
         <ActionsIcon className="w-4" />
       </Button>
-      {isMenuOpen && (
-        <ActionsMenu>
-          <MenuItem>Overview</MenuItem>
-          <MenuItem>Settings</MenuItem>
-        </ActionsMenu>
-      )}
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { questionType } from "@/constants/questionType";
 import { getQuestionConfig } from "@/utils/getQuestionConfig";
 import TitleTextArea from "./questionEditorForm/TitleTextArea";
 import OptionInputGroup from "./questionEditorForm/OptionInputGroup";
-import Button from "@/components/Button";
+import Button from "@/components/ui/Button";
 import BlankSpaceIcon from "remixicon-react/SpaceIcon";
 import SaveIcon from "remixicon-react/Save2FillIcon";
 import DropdownMenu from "@/components/DropdownMenu";
