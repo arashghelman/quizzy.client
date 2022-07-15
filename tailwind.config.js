@@ -56,7 +56,8 @@ module.exports = {
         1: "1px",
       },
       fontFamily: {
-        nunito: ["'Nunito Sans'", "sans-serif"],
+        nunito: ["Nunito", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
     },
   },
