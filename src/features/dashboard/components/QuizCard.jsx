@@ -36,8 +36,7 @@ export default function QuizCard() {
       <span className="text-gray-500 text-sm">Created 2 days ago</span>
       <div className="relative">
         <Button
-          variant="primary"
-          customStyle="w-7 h-7"
+          variant="actions"
           onClick={() => setIsMenuOpen((prev) => !prev)}
         >
           <ActionsIcon className="w-4" />
