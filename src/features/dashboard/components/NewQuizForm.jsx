@@ -3,7 +3,7 @@ import InputGroup from "@/components/form/InputGroup";
 import InputText from "@/components/form/InputText";
 import Checkbox from "@/components/form/Checkbox";
 import Button from "@/components/ui/Button";
-import { subjects } from "../data/fakeSubjects";
+import { subjects } from "@/data/fakeSubjects";
 
 export default function NewQuizForm() {
   return (
@@ -16,7 +16,7 @@ export default function NewQuizForm() {
       <InputGroup
         label="Subjects"
         element={
-          <div className="flex flex-wrap gap-x-2 gap-y-4">
+          <div className="grid grid-cols-3 gap-4">
             {subjects.map((sub) => (
               <Checkbox key={sub.id} label={sub.name} />
             ))}

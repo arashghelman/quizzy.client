@@ -5,7 +5,7 @@ export default function InputGroup({ label, element, helper }) {
     <div className="flex flex-col gap-3">
       <label className="text-gray-800 font-semibold">{label}</label>
       {element}
-      <p className="text-gray-500">{helper}</p>
+      {helper && <p className="text-gray-500">{helper}</p>}
     </div>
   );
 }

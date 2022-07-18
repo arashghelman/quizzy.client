@@ -1,17 +1,20 @@
 import React from "react";
+import * as BsIcons from "react-icons/bs";
 
 export default function Checkbox({ label }) {
   return (
-    <label className="cursor-pointer group">
-      <input type="checkbox" className="appearance-none peer" />
+    <label className="flex items-center gap-2 cursor-pointer relative text-gray-800 group">
+      <input type="checkbox" className="appearance-none absolute peer" />
       <span
-        className="border-1 border-gray-300 peer-checked:text-blue-500 peer-checked:hover:text-blue-400 
-        rounded-full 
-        px-3 py-1 text-gray-500 group-hover:text-gray-400 group-hover:border-gray-200
-        peer-checked:border-blue-500 peer-checked:hover:border-blue-400"
-      >
-        {label}
-      </span>
+        className="border-2 border-gray-300 w-5 h-5 rounded 
+        hover:border-gray-500 hover:bg-gray-100
+        peer-checked:bg-blue-500 peer-checked:border-blue-500 peer-focus:ring-4"
+      ></span>
+      <BsIcons.BsCheck
+        className="absolute text-white w-5 h-5 
+        invisible peer-checked:visible"
+      />
+      {label}
     </label>
   );
 }

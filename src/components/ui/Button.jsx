@@ -9,8 +9,8 @@ export default function Button({
 }) {
   const variantConfig = {
     outlined:
-      "px-3 py-2 rounded text-gray-800 border-1 border-gray-300 hover:bg-gray-200",
-    contained: "px-3 py-2 rounded text-white bg-blue-500 hover:bg-blue-700",
+      "px-4 py-2 rounded text-gray-800 border-1 border-gray-300 hover:bg-gray-200",
+    contained: "px-4 py-2 rounded text-white bg-blue-500 hover:bg-blue-700",
     "modal-close":
       "rounded-full w-7 h-7 text-gray-800 bg-gray-200 hover:bg-gray-300",
     actions: "border-1 border-gray-300 w-8 h-8 rounded hover:bg-gray-200",
@@ -20,7 +20,7 @@ export default function Button({
       type={type}
       onClick={onClick}
       {...rest}
-      className={`flex justify-center items-center gap-1 
+      className={`flex justify-center items-center gap-1
       focus:outline-none focus:ring-4 ${variantConfig[variant]}`}
     >
       {children}
