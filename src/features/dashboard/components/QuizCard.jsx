@@ -23,7 +23,7 @@ export default function QuizCard() {
   });
 
   return (
-    <div className="relative flex justify-between items-center cursor-pointer hover:bg-gray-100 border-b-1 border-gray-300 p-4">
+    <div className="relative flex justify-between items-center cursor-pointer hover:bg-gray-100 border-b-1 p-4">
       <div className="flex gap-4">
         <Thumbnail url="https://corridorchapter.nl/wp-content/uploads/2020/05/quiz.jpg" />
         <div className="flex flex-col gap-1">
