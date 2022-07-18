@@ -33,7 +33,7 @@ export const subjects = [
   },
   {
     id: "9",
-    name: "Chemistory",
+    name: "Chemistry",
   },
   {
     id: "10",
