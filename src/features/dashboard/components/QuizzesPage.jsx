@@ -4,10 +4,10 @@ import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/Modal";
 import QuizCard from "./QuizCard";
 import NewQuizForm from "./NewQuizForm";
-import AddIcon from "remixicon-react/AddLineIcon";
 
 export default function QuizzesPage() {
   const modalRef = React.useRef();
+
   return (
     <>
       <div className="flex flex-col gap-4">
@@ -17,7 +17,6 @@ export default function QuizzesPage() {
             variant="contained"
             onClick={() => modalRef.current?.showModal()}
           >
-            <AddIcon className="w-4" />
             <span className="mr-1">Create Quiz</span>
           </Button>
         </div>

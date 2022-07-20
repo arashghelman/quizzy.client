@@ -1,5 +1,6 @@
 import React from "react";
-import Header from "./Header";
+import Thumbnail from "@/components/ui/Thumbnail";
+import Heading from "@/components/ui/Heading";
 import TabBar from "@/components/ui/TabBar";
 import Tab from "@/components/ui/Tab";
 import { tabs } from "../data/tabBarData";
@@ -15,7 +16,7 @@ export default function QuizPage() {
     3: <SettingsPanel />,
   };
 
-  const [tabValue, setTabValue] = React.useState(3);
+  const [tabValue, setTabValue] = React.useState(2);
 
   return (
     <>
@@ -27,7 +28,16 @@ export default function QuizPage() {
           <HiIcons.HiOutlineArrowLeft />
           Back to Quizzes
         </a>
-        <Header />
+        <div className="flex gap-6">
+          <Thumbnail
+            size="md"
+            url="https://corridorchapter.nl/wp-content/uploads/2020/05/quiz.jpg"
+          />
+          <div className="flex flex-col gap-2">
+            <Heading>English Test</Heading>
+            <span className="text-gray-500">Public</span>
+          </div>
+        </div>
       </div>
       <TabBar>
         {tabs.map((tab) => (
