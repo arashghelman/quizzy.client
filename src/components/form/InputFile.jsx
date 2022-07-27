@@ -1,23 +1,24 @@
 import React from "react";
-import Button from "../ui/Button";
-import * as BiIcons from "react-icons/bi";
+import * as FiIcons from "react-icons/fi";
 
 export default function InputFile() {
   const ref = React.useRef();
   return (
     <div
-      className="relative overflow-hidden rounded flex flex-col justify-center items-center gap-4 py-12 bg-gray-100 InputFile
-    border-1 border-gray-300 border-dashed"
+      className="relative overflow-hidden rounded flex flex-col justify-center items-center bg-gray-100
+    border-1 border-gray-300 text-gray-800 border-dashed gap-4"
     >
-      <span className="text-gray-500 text-center text-sm">
-        Drag and drop to upload thumbnail file or <br /> import file from your
-        computer
-      </span>
-      <Button variant="contained" onClick={() => ref.current?.click()}>
-        <BiIcons.BiImport className="w-5 h-5" />
-        Import
-      </Button>
-      <input ref={ref} type="file" className="invisible absolute" />
+      <FiIcons.FiDownload className="w-8 h-8 text-gray-500" />
+      <p>
+        <span
+          onClick={() => ref.current?.click()}
+          className="font-semibold cursor-pointer hover:underline"
+        >
+          Choose a file
+        </span>{" "}
+        or drag it here.
+      </p>
+      <input ref={ref} type="file" className="absolute hidden" />
     </div>
   );
 }

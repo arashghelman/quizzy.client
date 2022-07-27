@@ -4,7 +4,7 @@ import NavItem from "@/components/ui/NavItem";
 export default function Sidebar({ items }) {
   return (
     <nav
-      className="h-screen w-[265px] px-4 py-6 
+      className="h-screen w-[265px] p-4
         border-r-1 bg-white"
     >
       <ul>

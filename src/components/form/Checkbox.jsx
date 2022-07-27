@@ -11,7 +11,7 @@ export default function Checkbox({ label }) {
         peer-checked:bg-blue-500 peer-checked:border-blue-500 peer-focus:ring-4"
       ></span>
       <BsIcons.BsCheck
-        className="absolute text-white w-5 h-5 
+        className="absolute text-white w-5 h-5
         invisible peer-checked:visible"
       />
       {label}

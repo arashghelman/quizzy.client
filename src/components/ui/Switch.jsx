@@ -2,7 +2,6 @@ import React from "react";
 
 export default function Switch({ labels, name, isOn, onChange }) {
   const [label1, label2] = labels;
-  const ref = React.useRef();
 
   return (
     <div
@@ -22,9 +21,9 @@ export default function Switch({ labels, name, isOn, onChange }) {
         onChange={onChange}
       />
       <span
-        className={`bg-white w-[50%] h-full absolute rounded-full shadow 
+        className={`w-1/2 h-full absolute rounded-full shadow 
         transform transition duration-300
-        ${isOn && "translate-x-full bg-blue-500"}`}
+        ${isOn ? "translate-x-full bg-blue-500" : "bg-white"}`}
       ></span>
     </div>
   );
@@ -32,7 +31,7 @@ export default function Switch({ labels, name, isOn, onChange }) {
 
 function SwitchInput({ label, name, textColor, onChange }) {
   return (
-    <label className={`px-5 py-2 z-10 cursor-pointer ${textColor}`}>
+    <label className={`px-4 py-2 z-10 cursor-pointer ${textColor}`}>
       {label}
       <input
         type="radio"

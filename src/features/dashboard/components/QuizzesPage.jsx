@@ -4,19 +4,22 @@ import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/Modal";
 import QuizCard from "./QuizCard";
 import NewQuizForm from "./NewQuizForm";
+import * as RiIcons from "react-icons/ri";
+import { quizzes } from "@/data/fakeQuizzes";
 
 export default function QuizzesPage() {
   const modalRef = React.useRef();
 
   return (
     <>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2">
         <div className="flex justify-between">
           <Heading>Quizzes</Heading>
           <Button
             variant="contained"
             onClick={() => modalRef.current?.showModal()}
           >
+            <RiIcons.RiAddFill />
             <span className="mr-1">Create Quiz</span>
           </Button>
         </div>
@@ -25,8 +28,9 @@ export default function QuizzesPage() {
         </p>
       </div>
       <div className="grid">
-        <QuizCard />
-        <QuizCard />
+        {quizzes.map((quiz) => (
+          <QuizCard key={quiz.id} data={quiz} />
+        ))}
       </div>
       <Modal ref={modalRef} heading="New quiz">
         <NewQuizForm />

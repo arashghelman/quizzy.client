@@ -29,7 +29,7 @@ export default function ActionsMenu({ children }) {
       </Button>
       {isOpen && (
         <ul
-          className="absolute w-max right-0 mt-1 z-10 
+          className="absolute w-max right-0 mt-2 z-10 
           bg-white border-1 rounded shadow-md flex flex-col p-2"
         >
           <IconContext.Provider value={{ className: "w-5 h-5" }}>

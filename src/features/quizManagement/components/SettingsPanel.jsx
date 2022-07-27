@@ -12,14 +12,14 @@ export default function SettingsPanel() {
   const [isPublic, setIsPublic] = React.useState(false);
 
   return (
-    <div className="border-1 p-8 rounded-md">
-      <form className="flex flex-col gap-10">
+    <div className="border-1 p-6 rounded-md">
+      <form className="flex flex-col gap-8">
         <Fieldset legend="Basic Information">
           <InputGroup label="Name" element={<InputText />} />
           <InputGroup
             label="Subjects"
             element={
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-2">
                 {subjects.map((sub) => (
                   <Checkbox key={sub.id} label={sub.name} />
                 ))}

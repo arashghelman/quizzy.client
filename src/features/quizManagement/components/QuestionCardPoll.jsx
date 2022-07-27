@@ -5,12 +5,12 @@ import AnswerItem from "./AnswerItem";
 import * as TbIcons from "react-icons/tb";
 import MenuItem from "@/components/ui/MenuItem";
 import * as HiIcons from "react-icons/hi";
-import PollItem from "./PollItem";
 
-export default function QuestionCardPoll() {
+export default function QuestionCardPoll({ data: { answers, ...rest } }) {
   return (
     <QuestionCard
-      icon={<FaIcons.FaPoll />}
+      data={{ ...rest }}
+      icon={<FaIcons.FaPoll className="w-6 h-6" />}
       actions={
         <>
           <MenuItem>
@@ -19,26 +19,15 @@ export default function QuestionCardPoll() {
           </MenuItem>
         </>
       }
-      answersList={
-        // <ul className="grid grid-cols-2 gap-4">
-        //   <AnswerItem
-        //     label="Yes"
-        //     icon={<TbIcons.TbQuestionMark />}
-        //     textColor="text-blue-500"
-        //     bgColor="bg-blue-100"
-        //   />
-        //   <AnswerItem
-        //     label="No"
-        //     icon={<TbIcons.TbQuestionMark />}
-        //     textColor="text-blue-500"
-        //     bgColor="bg-blue-100"
-        //   />
-        // </ul>
-        <ul className="grid gap-4">
-          <PollItem label="Yes" value={60} />
-          <PollItem label="No" value={40} />
-        </ul>
-      }
+      answersList={answers.map((answer) => (
+        <AnswerItem
+          key={answer.id}
+          label={answer.value}
+          icon={<TbIcons.TbQuestionMark />}
+          textColor="text-blue-500"
+          bgColor="bg-blue-100"
+        />
+      ))}
     />
   );
 }

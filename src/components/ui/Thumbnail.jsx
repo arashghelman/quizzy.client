@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Thumbnail({ size = "sm", url }) {
   const sizeConfig = {
-    sm: "w-11 h-11",
+    sm: "w-12 h-12",
     md: "w-14 h-14",
   };
   return (

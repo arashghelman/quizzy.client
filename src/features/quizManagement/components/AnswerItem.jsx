@@ -3,7 +3,7 @@ import { IconContext } from "react-icons/lib";
 
 export default function AnswerItem({ label, icon, textColor, bgColor }) {
   return (
-    <li className="flex items-center gap-3 text-gray-800">
+    <li className="flex items-center gap-2 text-gray-800">
       <span
         className={`rounded-full w-5 h-5 flex items-center justify-center ${textColor} ${bgColor}`}
       >

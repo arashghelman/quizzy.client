@@ -7,7 +7,7 @@ import { subjects } from "@/data/fakeSubjects";
 
 export default function NewQuizForm() {
   return (
-    <form className="flex flex-col gap-6 w-[550px]" method="dialog">
+    <form className="flex flex-col gap-4 w-[550px]" method="dialog">
       <InputGroup
         label="Name"
         element={<InputText />}
@@ -16,7 +16,7 @@ export default function NewQuizForm() {
       <InputGroup
         label="Subjects"
         element={
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-2">
             {subjects.map((sub) => (
               <Checkbox key={sub.id} label={sub.name} />
             ))}
