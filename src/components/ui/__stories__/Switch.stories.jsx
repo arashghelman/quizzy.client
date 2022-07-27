@@ -12,4 +12,5 @@ export const Default = Template.bind({});
 Default.args = {
   labels: ["Label1", "Label2"],
   name: "switch",
+  isOn: false,
 };
