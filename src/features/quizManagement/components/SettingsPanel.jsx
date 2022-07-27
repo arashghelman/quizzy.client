@@ -13,7 +13,7 @@ export default function SettingsPanel() {
 
   return (
     <div className="border-1 p-6 rounded-md">
-      <form className="flex flex-col gap-8">
+      <form className="flex flex-col gap-6">
         <Fieldset legend="Basic Information">
           <InputGroup label="Name" element={<InputText />} />
           <InputGroup
