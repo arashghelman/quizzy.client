@@ -9,12 +9,11 @@ export const items = [
   },
   {
     title: "Library",
-    path: "/library",
     icon: <FaIcons.FaBook />,
     subNav: [
       {
         title: "Quizzes",
-        path: "/library/quizzes",
+        path: "/quizzes",
       },
     ],
     isOpen: false,

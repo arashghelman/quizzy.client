@@ -1,5 +1,8 @@
 import "tailwindcss/tailwind.css";
 import "./preview.css";
+import React from "react";
+import { addDecorator } from "@storybook/react";
+import { MemoryRouter } from "react-router-dom";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -11,3 +14,9 @@ export const parameters = {
   },
   layout: "fullscreen",
 };
+
+addDecorator((Story) => (
+  <MemoryRouter initialEntries={["/"]}>
+    <Story />
+  </MemoryRouter>
+));
