@@ -2,17 +2,15 @@ import React from "react";
 import Thumbnail from "@/components/ui/Thumbnail";
 import Heading from "@/components/ui/Heading";
 import TabBar from "@/components/ui/TabBar";
-import { tabs } from "../data/tabBarData";
 import * as HiIcons from "react-icons/hi";
 import { Link, useParams, Outlet } from "react-router-dom";
 import { quizzes } from "@/data/fakeQuizzes";
 import { quizStatus } from "@/data/quizStatus";
+import { tabs } from "../data/tabBarData";
 
 export default function QuizPage() {
   const { id } = useParams();
   const quiz = quizzes.find((quiz) => quiz.id === id);
-
-  console.log(quiz);
 
   return (
     <>

@@ -28,7 +28,8 @@ export default function Button({
       onClick={onClick}
       {...rest}
       className={`flex items-center
-      focus:outline-none focus:ring-4 ${variantConfig[variant]}`}
+      focus:outline-none focus:ring-4
+      disabled:opacity-70 disabled:cursor-not-allowed ${variantConfig[variant]}`}
     >
       {children}
     </button>

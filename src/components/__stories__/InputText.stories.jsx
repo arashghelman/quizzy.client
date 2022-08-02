@@ -1,5 +1,5 @@
 import React from "react";
-import InputText from "../InputText";
+import InputText from "../form/InputText";
 
 export default {
   title: "Components/Form/InputText",

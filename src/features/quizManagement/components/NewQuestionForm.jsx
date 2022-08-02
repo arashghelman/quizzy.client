@@ -1,6 +1,5 @@
 import React from "react";
 import TypeInputRadio from "./TypeInputRadio";
-import { types } from "../data/typeInputData";
 import InputGroup from "@/components/form/InputGroup";
 import Button from "@/components/ui/Button";
 import TextArea from "@/components/form/TextArea";
@@ -8,9 +7,11 @@ import Label from "@/components/form/Label";
 import HelperText from "@/components/form/HelperText";
 import AnswerInputGroup from "./AnswerInputGroup";
 import * as RiIcons from "react-icons/ri";
+import { types } from "../data/typeInputsData";
 
 export default function NewQuestionForm() {
   const [isNext, setIsNext] = React.useState(false);
+
   return (
     <form className="flex flex-col gap-4 w-[550px]" method="dialog">
       {isNext ? (

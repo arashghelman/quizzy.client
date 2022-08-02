@@ -1,5 +1,5 @@
 import React from "react";
-import InputFile from "../InputFile";
+import InputFile from "../form/InputFile";
 
 export default {
   title: "Components/Form/InputFile",

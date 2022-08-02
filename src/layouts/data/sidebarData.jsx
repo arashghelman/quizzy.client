@@ -4,7 +4,7 @@ import * as FaIcons from "react-icons/fa";
 export const items = [
   {
     title: "Activity",
-    path: "/activity",
+    path: "activity",
     icon: <FaIcons.FaChartLine />,
   },
   {
@@ -13,7 +13,7 @@ export const items = [
     subNav: [
       {
         title: "Quizzes",
-        path: "/quizzes",
+        path: "quizzes",
       },
     ],
     isOpen: false,

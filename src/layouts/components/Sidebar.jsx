@@ -1,7 +1,8 @@
 import React from "react";
 import NavItem from "@/components/ui/NavItem";
+import { items } from "../data/sidebarData";
 
-export default function Sidebar({ items }) {
+export default function Sidebar() {
   return (
     <nav
       className="h-screen w-[265px] p-4

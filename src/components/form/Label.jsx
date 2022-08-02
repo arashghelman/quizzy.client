@@ -1,7 +1,9 @@
 import React from "react";
 
-export default function Label({ children }) {
+export default function Label({ id, children }) {
   return (
-    <label className="text-gray-800 font-semibold text-base">{children}</label>
+    <label htmlFor={id} className="text-gray-800 font-semibold text-base">
+      {children}
+    </label>
   );
 }
