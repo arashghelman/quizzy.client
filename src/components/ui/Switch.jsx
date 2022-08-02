@@ -31,7 +31,7 @@ export default function Switch({ labels, name, isOn, onChange }) {
 
 function SwitchInput({ label, name, textColor, onChange }) {
   return (
-    <label className={`px-4 py-2 z-10 cursor-pointer ${textColor}`}>
+    <label className={`px-6 py-2 z-10 cursor-pointer ${textColor}`}>
       {label}
       <input
         type="radio"
