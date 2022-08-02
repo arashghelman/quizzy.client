@@ -9,6 +9,7 @@ export default function Button({
   ...rest
 }) {
   const variantConfig = {
+    basic: "focus:ring-0 hover:opacity-70",
     outlined:
       "justify-center gap-2 px-4 py-2 rounded text-gray-800 border-1 border-gray-300 hover:bg-gray-200",
     contained:
