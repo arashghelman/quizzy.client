@@ -3,7 +3,7 @@ import Heading from "@/components/ui/Heading";
 import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/Modal";
 import QuizCard from "./QuizCard";
-import NewQuizForm from "./NewQuizForm";
+import QuizForm from "./QuizForm";
 import * as RiIcons from "react-icons/ri";
 import { quizzes } from "@/data/fakeQuizzes";
 
@@ -33,7 +33,7 @@ export default function QuizzesPage() {
         ))}
       </div>
       <Modal ref={modalRef} heading="New quiz">
-        <NewQuizForm />
+        <QuizForm />
       </Modal>
     </>
   );

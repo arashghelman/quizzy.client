@@ -7,7 +7,7 @@ import InputSelect from "@/components/form/InputSelect";
 import Label from "@/components/form/Label";
 import HelperText from "@/components/form/HelperText";
 
-export default function NewQuizForm() {
+export default function QuizForm() {
   return (
     <form className="flex flex-col gap-4 w-[550px]" method="dialog">
       <InputGroup>
