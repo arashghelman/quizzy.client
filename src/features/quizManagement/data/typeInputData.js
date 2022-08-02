@@ -4,8 +4,8 @@ import * as FaIcons from "react-icons/fa";
 export const types = [
   {
     label: "Multiple-choice",
-    bgColor: "bg-amber-100",
-    icon: <FaIcons.FaCheck className="text-amber-500 w-5 h-5" />,
+    bgColor: "bg-emerald-100",
+    icon: <FaIcons.FaCheck className="text-emerald-500 w-5 h-5" />,
   },
   {
     label: "Poll",

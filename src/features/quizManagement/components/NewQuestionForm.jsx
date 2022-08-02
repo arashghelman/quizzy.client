@@ -33,13 +33,13 @@ export default function NewQuestionForm() {
       ) : (
         <>
           <InputGroup>
-            <Label>Types</Label>
+            <Label>Question type</Label>
             <HelperText>
               Choose an appropriate question type from a variety of types.
             </HelperText>
             <div className="grid grid-cols-4 auto-rows-fr gap-4">
               {types.map((type) => (
-                <TypeInputRadio key={type.label} data={type} />
+                <TypeInputRadio key={type.label} type={type} />
               ))}
             </div>
           </InputGroup>
