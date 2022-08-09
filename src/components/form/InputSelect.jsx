@@ -3,19 +3,22 @@ import * as BsIcons from "react-icons/bs";
 
 export default function InputSelect({
   label,
-  id,
+  name,
   value,
   type = "radio",
+  defaultChecked,
+  onChange,
   register,
 }) {
   return (
     <label className="flex items-center gap-2 cursor-pointer relative text-gray-800 group">
       <input
         type={type}
-        id={id}
-        name={id}
+        name={name}
         value={value}
-        {...register()}
+        defaultChecked={defaultChecked}
+        onChange={onChange}
+        {...register?.()}
         className="appearance-none absolute peer"
       />
       <span

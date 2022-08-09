@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "@/layouts/Sidebar";
+import Sidebar from "@/layouts/components/Sidebar";
 import PageLayout from "@/layouts/components/PageLayout";
 import QuizzesPage from "@/features/quizManagement/components/QuizzesPage";
 import QuizPage from "@/features/quizManagement/components/QuizPage";

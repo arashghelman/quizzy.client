@@ -6,17 +6,18 @@ export default function InputFile() {
   return (
     <div
       className="relative overflow-hidden rounded flex flex-col justify-center items-center bg-gray-100
-    border-1 border-gray-300 text-gray-800 border-dashed gap-4"
+    border-1 border-gray-300 text-gray-500 border-dashed gap-6 h-[191px]"
     >
-      <FiIcons.FiDownload className="w-8 h-8 text-gray-500" />
+      <FiIcons.FiUploadCloud className="w-12 h-12 text-gray-500" />
       <p>
+        Drag and drop or{" "}
         <span
           onClick={() => ref.current?.click()}
-          className="font-semibold cursor-pointer hover:underline"
+          className="text-blue-500 font-semibold cursor-pointer hover:underline"
         >
-          Choose a file
+          browse
         </span>{" "}
-        or drag it here.
+        your files
       </p>
       <input ref={ref} type="file" className="absolute hidden" />
     </div>

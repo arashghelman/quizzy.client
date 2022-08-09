@@ -4,7 +4,6 @@ import * as FaIcons from "react-icons/fa";
 import AnswerItem from "./AnswerItem";
 import * as TbIcons from "react-icons/tb";
 import MenuItem from "@/components/ui/MenuItem";
-import * as HiIcons from "react-icons/hi";
 
 export default function QuestionCardPoll({ data: { answers, ...rest } }) {
   return (
@@ -14,7 +13,7 @@ export default function QuestionCardPoll({ data: { answers, ...rest } }) {
       actions={
         <>
           <MenuItem>
-            <HiIcons.HiEye />
+            <FaIcons.FaEye />
             Show results
           </MenuItem>
         </>

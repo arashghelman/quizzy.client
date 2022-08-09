@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "./Button";
-import * as RiIcons from "react-icons/ri";
+import * as FiIcons from "react-icons/fi";
 import { IconContext } from "react-icons/lib";
 
 export default function ActionsMenu({ children }) {
@@ -24,15 +24,21 @@ export default function ActionsMenu({ children }) {
 
   return (
     <div ref={ref} className="relative">
-      <Button variant="actions" onClick={() => setIsOpen((prev) => !prev)}>
-        <RiIcons.RiMoreFill className="w-4 h-4" />
+      <Button
+        variant="actions"
+        onClick={(event) => {
+          event.stopPropagation();
+          setIsOpen((prev) => !prev);
+        }}
+      >
+        <FiIcons.FiMoreVertical className="w-5 h-5" />
       </Button>
       {isOpen && (
         <ul
           className="absolute w-max right-0 mt-2 z-10 
           bg-white border-1 rounded shadow-md flex flex-col p-2"
         >
-          <IconContext.Provider value={{ className: "w-5 h-5" }}>
+          <IconContext.Provider value={{ className: "w-4 h-4" }}>
             {children}
           </IconContext.Provider>
         </ul>

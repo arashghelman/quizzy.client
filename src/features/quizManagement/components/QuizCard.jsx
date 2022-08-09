@@ -27,8 +27,15 @@ export default function QuizCard({ data: { id, name, status, thumbnail } }) {
       </div>
       <span className="text-gray-500">Created 2 days ago</span>
       <ActionsMenu>
-        <MenuItem>Overview</MenuItem>
-        <MenuItem>Settings</MenuItem>
+        <MenuItem>
+          <Link to={`${id}/overview`}>Overview</Link>
+        </MenuItem>
+        <MenuItem>
+          <Link to={`${id}/questions`}>Questions</Link>
+        </MenuItem>
+        <MenuItem>
+          <Link to={`${id}/settings`}>Settings</Link>
+        </MenuItem>
       </ActionsMenu>
     </div>
   );

@@ -9,25 +9,53 @@ import InputFile from "@/components/form/InputFile";
 import InputSelect from "@/components/form/InputSelect";
 import Label from "@/components/form/Label";
 import HelperText from "@/components/form/HelperText";
+import { useForm } from "react-hook-form";
+import { schema } from "../data/quizFormSchema";
+import ErrorText from "@/components/form/ErrorText";
 
 export default function SettingsPanel() {
-  const [isPublic, setIsPublic] = React.useState(false);
+  const {
+    register,
+    formState: { errors },
+    watch,
+    handleSubmit,
+  } = useForm({ mode: "onBlur" });
 
   return (
     <div className="border-1 p-6 rounded-md">
-      <form className="flex flex-col gap-6">
+      <form
+        onSubmit={handleSubmit((data) => console.log(data))}
+        className="flex flex-col gap-6"
+      >
         <Fieldset legend="Basic Information">
           <InputGroup>
-            <Label>Name</Label>
-            <InputText />
+            <Label id="name">Name</Label>
+            <InputText
+              id="name"
+              placeholder="Enter a quiz name"
+              isInvalid={errors.name ? true : false}
+              register={() => register("name", schema["name"])}
+            />
+            {errors.name?.message && (
+              <ErrorText>{errors.name.message}</ErrorText>
+            )}
           </InputGroup>
           <InputGroup>
             <Label>Subjects</Label>
             <div className="grid grid-cols-2 gap-2">
               {subjects.map((sub) => (
-                <InputSelect key={sub.id} label={sub.name} type="checkbox" />
+                <InputSelect
+                  key={sub.id}
+                  label={sub.name}
+                  value={sub.id}
+                  type="checkbox"
+                  register={() => register("subjects", schema["subjects"])}
+                />
               ))}
             </div>
+            {errors.subjects?.message && (
+              <ErrorText>{errors.subjects.message}</ErrorText>
+            )}
           </InputGroup>
         </Fieldset>
         <hr />
@@ -36,19 +64,16 @@ export default function SettingsPanel() {
             <Label>Quiz Thumbnail</Label>
             <InputFile />
           </InputGroup>
-        </Fieldset>
-        <hr />
-        <Fieldset legend="Visibility?">
           <InputGroup>
-            <Label>Visibility</Label>
-            <Switch
-              labels={["Draft", "Public"]}
-              name="Visibility"
-              isOn={isPublic}
-              onChange={() => setIsPublic((prev) => !prev)}
-            />
+            <Label>Status</Label>
+            <div className="flex items-center gap-4">
+              <Switch register={() => register("isPublic")} />
+              <span className="text-gray-800">
+                {watch("isPublic") ? "Public" : "Draft"}
+              </span>
+            </div>
             <HelperText>
-              {isPublic
+              {watch("isPublic")
                 ? "The quiz will be visible to everyone."
                 : "The quiz will be visible to you."}
             </HelperText>

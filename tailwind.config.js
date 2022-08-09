@@ -10,9 +10,10 @@ module.exports = {
         inter: ["Inter", "sans-serif"],
       },
       boxShadow: {
-        inputFocus: `0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color),
-          inset 0 0 0 1px #3b82f6`,
-        innerFocus: "inset 0 0 0 1px #3b82f6",
+        focus: `0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color),
+          inset 0 0 0 calc(1px + var(--tw-ring-offset-width)) #3b82f6`,
+        "inner-focus":
+          "inset 0 0 0 calc(1px + var(--tw-ring-offset-width)) #3b82f6",
       },
     },
   },

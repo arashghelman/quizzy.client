@@ -16,7 +16,7 @@ export default function QuizPage() {
     <>
       <div className="flex flex-col gap-4">
         <Link
-          to="/quizzes"
+          to="./.."
           className="flex w-fit items-center gap-2 text-gray-500 hover:text-gray-800"
         >
           <HiIcons.HiOutlineArrowLeft className="w-4 h-4" />

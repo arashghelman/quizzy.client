@@ -1,5 +1,5 @@
 import React from "react";
-import Switch from "../Switch";
+import Switch from "../ui/Switch";
 
 export default {
   title: "Components/UI/Switch",
@@ -9,8 +9,3 @@ export default {
 const Template = ({ ...args }) => <Switch {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
-  labels: ["Label1", "Label2"],
-  name: "switch",
-  isOn: false,
-};

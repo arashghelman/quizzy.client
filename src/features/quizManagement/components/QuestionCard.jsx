@@ -2,7 +2,7 @@ import React from "react";
 import ActionsMenu from "@/components/ui/ActionsMenu";
 import MenuItem from "@/components/ui/MenuItem";
 import { IconContext } from "react-icons/lib";
-import * as HiIcons from "react-icons/hi";
+import * as FaIcons from "react-icons/fa";
 
 export default function QuestionCard({
   data: { title, number },
@@ -26,15 +26,15 @@ export default function QuestionCard({
         </div>
         <ActionsMenu>
           <MenuItem>
-            <HiIcons.HiPencil />
+            <FaIcons.FaPen />
             Edit
           </MenuItem>
           <MenuItem>
-            <HiIcons.HiTrash />
+            <FaIcons.FaTrashAlt />
             Delete
           </MenuItem>
           <MenuItem>
-            <HiIcons.HiDuplicate />
+            <FaIcons.FaCopy />
             Duplicate
           </MenuItem>
           {actions}

@@ -28,6 +28,7 @@ export default function QuizForm() {
         <InputText
           id="name"
           placeholder="Enter a quiz name"
+          isInvalid={errors.name ? true : false}
           register={() => register("name", schema["name"])}
         />
         {errors.name?.message && <ErrorText>{errors.name?.message}</ErrorText>}
@@ -40,7 +41,6 @@ export default function QuizForm() {
             <InputSelect
               key={sub.id}
               label={sub.name}
-              id="subjects"
               value={sub.id}
               type="checkbox"
               register={() => register("subjects", schema["subjects"])}

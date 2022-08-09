@@ -1,45 +1,17 @@
 import React from "react";
 
-export default function Switch({ labels, name, isOn, onChange }) {
-  const [label1, label2] = labels;
-
+export default function Switch({ register }) {
   return (
-    <div
-      className="relative flex w-fit bg-gray-100 border-2 
-    border-gray-100 rounded-full text-gray-500"
-    >
-      <SwitchInput
-        label={label1}
-        name={name}
-        textColor={!isOn && "text-gray-800"}
-        onChange={onChange}
-      />
-      <SwitchInput
-        label={label2}
-        name={name}
-        textColor={isOn && "text-white"}
-        onChange={onChange}
-      />
-      <span
-        className={`w-1/2 h-full absolute rounded-full shadow 
-        transform transition duration-300
-        ${isOn ? "translate-x-full bg-blue-500" : "bg-white"}`}
-      ></span>
-    </div>
-  );
-}
-
-function SwitchInput({ label, name, textColor, onChange }) {
-  return (
-    <label className={`px-6 py-2 z-10 cursor-pointer ${textColor}`}>
-      {label}
-      <input
-        type="radio"
-        id={label}
-        name={name}
-        className="appearance-none absolute w-full"
-        onChange={onChange}
-      />
+    <label className="inline-block cursor-pointer w-fit">
+      <input type="checkbox" {...register()} className="peer hidden" />
+      <div
+        className="relative w-[56px] h-8 rounded-full bg-gray-100 duration-300 
+        after:content-[''] after:top-[4px] after:left-[4px] after:absolute
+        after:w-6 after:h-6 after:rounded-full after:bg-white after:shadow-md
+        after:duration-300 peer-checked:bg-blue-500
+        peer-checked:after:left-[calc(100%-4px)]
+        transform peer-checked:after:-translate-x-full"
+      ></div>
     </label>
   );
 }

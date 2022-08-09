@@ -7,7 +7,7 @@ import { quizzes } from "@/data/fakeQuizzes";
 import Button from "@/components/ui/Button";
 import * as RiIcons from "react-icons/ri";
 import Modal from "@/components/ui/Modal";
-import NewQuestionForm from "./NewQuestionForm";
+import QuestionForm from "./QuestionForm";
 
 export default function QuestionsPanel() {
   const { id } = useParams();
@@ -42,7 +42,7 @@ export default function QuestionsPanel() {
       </div>
       <div className="grid">{questionsList}</div>
       <Modal ref={modalRef} heading="New Question">
-        <NewQuestionForm />
+        <QuestionForm />
       </Modal>
     </>
   );
