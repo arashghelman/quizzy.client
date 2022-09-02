@@ -7,21 +7,23 @@ import InputSelect from "@/components/form/InputSelect";
 import Label from "@/components/form/Label";
 import HelperText from "@/components/form/HelperText";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "../data/quizFormSchema";
+import * as messages from "../messages/quizFormMessages";
 import ErrorText from "@/components/form/ErrorText";
 
 export default function QuizForm() {
   const {
     register,
-    formState: { errors, isValid },
+    formState: { errors },
     handleSubmit,
-  } = useForm({ mode: "onBlur" });
+  } = useForm({ mode: "onBlur", resolver: yupResolver(schema) });
 
   return (
     <form
       method="dialog"
       onSubmit={handleSubmit((data) => console.log(data))}
-      className="flex flex-col gap-4 w-[550px]"
+      className="flex flex-col gap-4"
     >
       <InputGroup>
         <Label id="name">Name</Label>
@@ -29,10 +31,10 @@ export default function QuizForm() {
           id="name"
           placeholder="Enter a quiz name"
           isInvalid={errors.name ? true : false}
-          register={() => register("name", schema["name"])}
+          register={() => register("name")}
         />
         {errors.name?.message && <ErrorText>{errors.name?.message}</ErrorText>}
-        <HelperText>A friendly name for the quiz.</HelperText>
+        <HelperText>{messages.NAME_HELPER_MESSAGE}</HelperText>
       </InputGroup>
       <InputGroup>
         <Label>Subjects</Label>
@@ -43,20 +45,18 @@ export default function QuizForm() {
               label={sub.name}
               value={sub.id}
               type="checkbox"
-              register={() => register("subjects", schema["subjects"])}
+              register={() => register("subjects")}
             />
           ))}
         </div>
         {errors.subjects?.message && (
           <ErrorText>{errors.subjects?.message}</ErrorText>
         )}
-        <HelperText>
-          Choose relevant subjects for better content suggestion.
-        </HelperText>
+        <HelperText>{messages.SUBJECTS_HELPER_MESSAGE}</HelperText>
       </InputGroup>
       <div className="flex self-end gap-2">
-        <Button>Cancel</Button>
-        <Button variant="contained" type="submit" disabled={!isValid}>
+        <Button variant="ButtonOutlined">Cancel</Button>
+        <Button variant="ButtonContained" type="submit">
           Create
         </Button>
       </div>
