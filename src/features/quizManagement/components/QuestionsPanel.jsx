@@ -13,9 +13,7 @@ export default function QuestionsPanel() {
   const { id } = useParams();
   const questions = quizzes.find((quiz) => quiz.id === id)?.questions;
 
-  const modalRef = React.useRef();
-
-  const questionsList = questions.map((question, index) => {
+  const questionsList = questions?.map((question, index) => {
     const props = { ...question, number: ++index };
     switch (question.type) {
       case questionType.MultipleChoice:
@@ -29,18 +27,37 @@ export default function QuestionsPanel() {
     }
   });
 
+  const modalRef = React.useRef();
+
   return (
     <>
-      <div className="self-end">
-        <Button
-          variant="contained"
-          onClick={() => modalRef.current?.showModal()}
-        >
-          <RiIcons.RiAddFill />
-          <span className="mr-1">Create Question</span>
-        </Button>
-      </div>
-      <div className="grid">{questionsList}</div>
+      {questions.length === 0 ? (
+        <div className="bg-gray-100 rounded flex flex-col items-center gap-2 py-6">
+          <p className="text-gray-500">
+            {"You haven't created any questions yet."}
+          </p>
+          <Button
+            variant="contained"
+            onClick={() => modalRef.current?.showModal()}
+          >
+            <RiIcons.RiAddFill />
+            Create your first question
+          </Button>
+        </div>
+      ) : (
+        <>
+          <div className="self-end">
+            <Button
+              variant="ButtonContained"
+              onClick={() => modalRef.current?.showModal()}
+            >
+              <RiIcons.RiAddFill />
+              <span className="mr-1">Create Question</span>
+            </Button>
+          </div>
+          <div className="grid">{questionsList}</div>
+        </>
+      )}
       <Modal ref={modalRef} heading="New Question">
         <QuestionForm />
       </Modal>

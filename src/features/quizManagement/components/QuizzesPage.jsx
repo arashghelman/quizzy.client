@@ -16,7 +16,7 @@ export default function QuizzesPage() {
         <div className="flex justify-between">
           <Heading>Quizzes</Heading>
           <Button
-            variant="contained"
+            variant="ButtonContained"
             onClick={() => modalRef.current?.showModal()}
           >
             <RiIcons.RiAddFill />

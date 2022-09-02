@@ -20,16 +20,23 @@ export default function OverviewPanel() {
             <h3 className="text-gray-800 font-bold text-xl">{quiz.name}</h3>
             <div className="flex flex-col gap-2">
               <span className="text-gray-800 font-semibold">Subjects</span>
-              <span className="text-gray-500">Fun, English, Languages</span>
+              <span className="text-gray-500">
+                {quiz.subjects.map((sub) => sub.name).join(", ")}
+              </span>
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-gray-800 font-semibold">Status</span>
-              <span className="text-gray-500">{quizStatus[quiz.status]}</span>
+              <span className="text-gray-500">
+                {quizStatus[quiz.status].name}
+              </span>
             </div>
           </div>
         </div>
         <div className="w-fit">
-          <Button variant="contained" onClick={() => navigate("../settings")}>
+          <Button
+            variant="ButtonContained"
+            onClick={() => navigate("../settings")}
+          >
             Edit info
           </Button>
         </div>

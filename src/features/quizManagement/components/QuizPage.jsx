@@ -26,7 +26,9 @@ export default function QuizPage() {
           <Thumbnail size="md" url={quiz.thumbnail} />
           <div className="flex flex-col gap-2">
             <Heading>{quiz.name}</Heading>
-            <span className="text-gray-500">{quizStatus[quiz.status]}</span>
+            <span className="text-gray-500">
+              {quizStatus[quiz.status].name}
+            </span>
           </div>
         </div>
       </div>

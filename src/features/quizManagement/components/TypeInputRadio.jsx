@@ -10,7 +10,7 @@ export default function TypeInputRadio({ type, register }) {
         className="absolute invisible peer"
       />
       <div
-        className="flex flex-col items-center gap-4 text-gray-800 border-1 rounded py-6 group cursor-pointer 
+        className="flex flex-col items-center gap-4 text-gray-800 border-1 rounded py-8 w-full group cursor-pointer 
       hover:border-gray-300 hover:bg-blue-50 group peer-checked:border-blue-500 peer-checked:shadow-inner-focus"
       >
         <div

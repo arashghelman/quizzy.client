@@ -4,7 +4,7 @@ export default function Thumbnail({ size = "sm", url }) {
   const sizeConfig = {
     sm: "w-12 h-12",
     md: "w-14 h-14",
-    lg: "w-fit h-40",
+    lg: "w-40 h-40",
   };
   return (
     <div className={`flex rounded overflow-hidden ${sizeConfig[size]}`}>

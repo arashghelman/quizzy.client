@@ -25,7 +25,7 @@ export default function ActionsMenu({ children }) {
   return (
     <div ref={ref} className="relative">
       <Button
-        variant="actions"
+        variant="text-gray-800 rounded-full p-2 hover:bg-gray-300"
         onClick={(event) => {
           event.stopPropagation();
           setIsOpen((prev) => !prev);

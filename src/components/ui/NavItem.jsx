@@ -2,16 +2,22 @@ import React from "react";
 import NavLinkWrapper from "./NavLinkWrapper";
 import Button from "./Button";
 import * as MdIcons from "react-icons/md";
+import { useLocation } from "react-router-dom";
 
 export default function NavItem({ item }) {
   const [isOpen, setIsOpen] = React.useState(false);
+
+  const { pathname } = useLocation();
 
   return (
     <li className="text-gray-800">
       {item.subNav ? (
         <>
           <Button
-            variant="nav-button"
+            variant={`NavItem justify-between ${
+              item.subNav?.some((sub) => pathname.match(sub.path)) &&
+              "text-blue-500"
+            }`}
             onClick={() => setIsOpen((prev) => !prev)}
           >
             <div className="flex items-center gap-2">

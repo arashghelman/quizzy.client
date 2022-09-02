@@ -7,11 +7,14 @@ const Modal = React.forwardRef(function Modal({ heading, children }, ref) {
     <dialog ref={ref} className="p-6 bg-white rounded">
       <div className="flex items-center justify-between mb-8">
         <h1 className="text-gray-800 text-2xl font-bold">{heading}</h1>
-        <Button variant="modal-close" onClick={() => ref.current?.close()}>
+        <Button
+          variant="text-gray-800 bg-gray-100 hover:bg-gray-300 rounded-full p-2"
+          onClick={() => ref.current?.close()}
+        >
           <CgIcons.CgClose className="w-4 h-4" />
         </Button>
       </div>
-      {children}
+      <div className="w-[584px] max-w-full">{children}</div>
     </dialog>
   );
 });

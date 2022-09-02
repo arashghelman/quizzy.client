@@ -1,9 +1,14 @@
 import React from "react";
 
-export default function Switch({ register }) {
+export default function Switch({ defaultChecked, register }) {
   return (
     <label className="inline-block cursor-pointer w-fit">
-      <input type="checkbox" {...register()} className="peer hidden" />
+      <input
+        type="checkbox"
+        defaultChecked={defaultChecked}
+        {...register()}
+        className="peer hidden"
+      />
       <div
         className="relative w-[56px] h-8 rounded-full bg-gray-100 duration-300 
         after:content-[''] after:top-[4px] after:left-[4px] after:absolute

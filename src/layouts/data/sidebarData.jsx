@@ -16,6 +16,5 @@ export const items = [
         path: "quizzes",
       },
     ],
-    isOpen: false,
   },
 ];
