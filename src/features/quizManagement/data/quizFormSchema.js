@@ -1,16 +1,16 @@
-const nameErrorMessage = "Please enter a name longer than 3 characters";
+import * as yup from "yup";
+import * as constraints from "../constraints/quizFormConstraints";
+import * as messages from "../messages/quizFormMessages";
 
-export const schema = {
-  name: {
-    required: {
-      value: true,
-      message: nameErrorMessage,
-    },
-    minLength: { value: 4, message: nameErrorMessage },
-  },
-  subjects: {
-    validate: (value) =>
-      (value.length >= 3 && value.length <= 5) ||
-      "Please choose three to five relevant subjects",
-  },
-};
+export const schema = yup.object({
+  name: yup
+    .string()
+    .required(messages.NAME_REQUIRED_MESSAGE)
+    .min(constraints.NAME_MIN_LENGTH, messages.NAME_REQUIRED_MESSAGE),
+  subjects: yup
+    .array()
+    .required(messages.SUBJECTS_LENGTH_MESSAGE)
+    .nullable()
+    .min(constraints.SUBJECTS_MIN_LENGTH, messages.SUBJECTS_LENGTH_MESSAGE)
+    .max(constraints.SUBJECTS_MAX_LENGTH, messages.SUBJECTS_LENGTH_MESSAGE),
+});
