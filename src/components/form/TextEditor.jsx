@@ -18,11 +18,8 @@ export default function TextEditor() {
       </div>
       <div
         contentEditable
-        className="px-4 py-2 text-gray-800 focus:outline-none"
-      >
-        <span className="text-blue-500">___</span>
-        fksjfsdfkjksld
-      </div>
+        className="px-4 py-2 flex text-gray-800 focus:outline-none"
+      ></div>
     </div>
   );
 }
