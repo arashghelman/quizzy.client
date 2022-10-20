@@ -4,7 +4,7 @@ import MenuItem from "@/components/ui/MenuItem";
 import Thumbnail from "@/components/ui/Thumbnail";
 import { quizStatus } from "@/data/quizStatus";
 import { Link, useNavigate } from "react-router-dom";
-import { itemType } from "@/components/data/menuItemType";
+import { menuItemType } from "@/components/data/menuItemType";
 
 export default function QuizCard({ data: { id, name, status, thumbnail } }) {
   const navigate = useNavigate();
@@ -28,13 +28,13 @@ export default function QuizCard({ data: { id, name, status, thumbnail } }) {
       </div>
       <span className="text-gray-500">Created 2 days ago</span>
       <ActionsMenu>
-        <MenuItem type={itemType.LINK} path={`${id}/overview`}>
+        <MenuItem type={menuItemType.LINK} path={`${id}/overview`}>
           Overview
         </MenuItem>
-        <MenuItem type={itemType.LINK} path={`${id}/questions`}>
+        <MenuItem type={menuItemType.LINK} path={`${id}/questions`}>
           Questions
         </MenuItem>
-        <MenuItem type={itemType.LINK} path={`${id}/settings`}>
+        <MenuItem type={menuItemType.LINK} path={`${id}/settings`}>
           Settings
         </MenuItem>
       </ActionsMenu>

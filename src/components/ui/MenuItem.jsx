@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "./Button";
-import { itemType } from "../data/menuItemType";
+import { menuItemType } from "../data/menuItemType";
 import { Link } from "react-router-dom";
 
 export default function MenuItem({ type, onClick, path, children }) {
@@ -20,10 +20,10 @@ export default function MenuItem({ type, onClick, path, children }) {
     <li className="w-full">
       {(() => {
         switch (type) {
-          case itemType.BUTTON:
+          case menuItemType.BUTTON:
             return button;
 
-          case itemType.LINK:
+          case menuItemType.LINK:
             return (
               <Link
                 to={path}

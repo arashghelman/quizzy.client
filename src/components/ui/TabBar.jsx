@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function TabBar({ tabs }) {
+export default function TabBar({ items }) {
   return (
     <div className="flex gap-6 border-b-1">
-      {tabs.map((tab, index) => (
+      {items.map((tab, index) => (
         <NavLink
           key={index}
           to={tab.path}

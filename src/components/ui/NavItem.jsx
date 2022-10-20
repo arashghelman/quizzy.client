@@ -4,25 +4,25 @@ import Button from "./Button";
 import * as MdIcons from "react-icons/md";
 import { useLocation } from "react-router-dom";
 
-export default function NavItem({ item }) {
+export default function NavItem({ data }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const { pathname } = useLocation();
 
   return (
     <li className="text-gray-800">
-      {item.subNav ? (
+      {data.subNav ? (
         <>
           <Button
             variant={`NavItem justify-between ${
-              item.subNav?.some((sub) => pathname.match(sub.path)) &&
+              data.subNav?.some((sub) => pathname.match(sub.path)) &&
               "text-blue-500"
             }`}
             onClick={() => setIsOpen((prev) => !prev)}
           >
             <div className="flex items-center gap-2">
-              {item.icon}
-              {item.title}
+              {data.icon}
+              {data.title}
             </div>
             <MdIcons.MdOutlineKeyboardArrowRight
               className={`w-4 h-4 transition duration-150 transform ${
@@ -31,7 +31,7 @@ export default function NavItem({ item }) {
             />
           </Button>
           <ul className={isOpen ? "visible" : "invisible"}>
-            {item.subNav.map((sub, index) => (
+            {data.subNav.map((sub, index) => (
               <li key={index}>
                 <NavLinkWrapper isSub path={sub.path}>
                   <div className="mx-6">{sub.title}</div>
@@ -41,9 +41,9 @@ export default function NavItem({ item }) {
           </ul>
         </>
       ) : (
-        <NavLinkWrapper path={item.path}>
-          {item.icon}
-          {item.title}
+        <NavLinkWrapper path={data.path}>
+          {data.icon}
+          {data.title}
         </NavLinkWrapper>
       )}
     </li>

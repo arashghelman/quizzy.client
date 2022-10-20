@@ -6,7 +6,7 @@ import * as HiIcons from "react-icons/hi";
 import { Link, useParams, Outlet } from "react-router-dom";
 import { quizzes } from "@/data/fakeQuizzes";
 import { quizStatus } from "@/data/quizStatus";
-import { tabs } from "../data/tabBarData";
+import { items } from "../data/tabBarData";
 
 export default function QuizPage() {
   const { id } = useParams();
@@ -32,7 +32,7 @@ export default function QuizPage() {
           </div>
         </div>
       </div>
-      <TabBar tabs={tabs} />
+      <TabBar items={items} />
       <Outlet />
     </>
   );

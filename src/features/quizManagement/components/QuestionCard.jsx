@@ -2,7 +2,7 @@ import React from "react";
 import ActionsMenu from "@/components/ui/ActionsMenu";
 import MenuItem from "@/components/ui/MenuItem";
 import { IconContext } from "react-icons/lib";
-import { itemType } from "@/components/data/menuItemType";
+import { menuItemType } from "@/components/data/menuItemType";
 import * as FaIcons from "react-icons/fa";
 
 export default function QuestionCard({
@@ -26,15 +26,15 @@ export default function QuestionCard({
           </div>
         </div>
         <ActionsMenu>
-          <MenuItem type={itemType.BUTTON}>
+          <MenuItem type={menuItemType.BUTTON}>
             <FaIcons.FaPen />
             Edit
           </MenuItem>
-          <MenuItem type={itemType.BUTTON}>
+          <MenuItem type={menuItemType.BUTTON}>
             <FaIcons.FaTrashAlt />
             Delete
           </MenuItem>
-          <MenuItem type={itemType.BUTTON}>
+          <MenuItem type={menuItemType.BUTTON}>
             <FaIcons.FaCopy />
             Duplicate
           </MenuItem>

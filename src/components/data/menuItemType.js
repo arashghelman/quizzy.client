@@ -1,4 +1,4 @@
-export const itemType = Object.freeze({
+export const menuItemType = Object.freeze({
   BUTTON: "button",
   LINK: "link",
 });
