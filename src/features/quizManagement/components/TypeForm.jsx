@@ -8,7 +8,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { types } from "../data/typeInputsData";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { typeSchema } from "../data/questionFormSchema";
+import { typeSchema } from "../validations/questionFormSchema";
 
 export default function TypeForm({ isHidden, setData, onNext }) {
   const {

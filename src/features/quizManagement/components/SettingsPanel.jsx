@@ -13,7 +13,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useParams } from "react-router-dom";
 import { quizzes } from "@/data/fakeQuizzes";
-import { schema } from "../data/quizFormSchema";
+import { schema } from "../validations/quizFormSchema";
 import ErrorText from "@/components/form/ErrorText";
 import { quizStatus } from "@/data/quizStatus";
 import * as messages from "../messages/quizFormMessages";

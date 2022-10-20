@@ -8,7 +8,7 @@ import Label from "@/components/form/Label";
 import HelperText from "@/components/form/HelperText";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schema } from "../data/quizFormSchema";
+import { schema } from "../validations/quizFormSchema";
 import * as messages from "../messages/quizFormMessages";
 import ErrorText from "@/components/form/ErrorText";
 
