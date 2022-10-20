@@ -1,27 +1,51 @@
 import React from "react";
-import TypeForm from "./TypeForm";
-import AnswersForm from "./AnswersForm";
+import InputGroup from "@/components/form/InputGroup";
+import Label from "@/components/form/Label";
+import TextArea from "@/components/form/TextArea";
+import ErrorText from "@/components/form/ErrorText";
+import AnswersFieldGroup from "./AnswersFieldGroup";
+import Button from "@/components/ui/Button";
+import { schema } from "../validations/questionFormSchema";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 export default function QuestionForm() {
-  const [data, setData] = React.useState({ type: "", title: "", answers: [] });
-
-  const [isNext, setIsNext] = React.useState(false);
-
-  console.log(data);
+  const {
+    register,
+    control,
+    getValues,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({ mode: "onBlur", resolver: yupResolver(schema) });
 
   return (
-    <div>
-      <TypeForm
-        isHidden={isNext}
-        setData={setData}
-        onNext={() => setIsNext(true)}
+    <form
+      method="dialog"
+      onSubmit={handleSubmit((data) => console.log(data))}
+      className="flex flex-col gap-4 w-full"
+    >
+      <InputGroup>
+        <Label id="title">Question</Label>
+        <TextArea
+          id="title"
+          placeholder="Type your question here..."
+          isInvalid={errors.title ? true : false}
+          register={() => register("title")}
+        />
+        {errors.title?.message && <ErrorText>{errors.title.message}</ErrorText>}
+      </InputGroup>
+      <AnswersFieldGroup
+        control={control}
+        errors={errors}
+        register={register}
+        getValues={getValues}
       />
-      <AnswersForm
-        isHidden={!isNext}
-        type={data.type}
-        setData={setData}
-        onBack={() => setIsNext(false)}
-      />
-    </div>
+      <div className="flex gap-2 self-end">
+        <Button variant="ButtonOutlined">Cancel</Button>
+        <Button variant="ButtonContained" type="submit">
+          Create
+        </Button>
+      </div>
+    </form>
   );
 }

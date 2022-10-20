@@ -3,17 +3,17 @@ import InputGroup from "@/components/form/InputGroup";
 import Label from "@/components/form/Label";
 import TextArea from "@/components/form/TextArea";
 import ErrorText from "@/components/form/ErrorText";
-import AnswersFieldArray from "./AnswersFieldArray";
+import AnswersFieldGroup from "./AnswersFieldGroup";
 import Button from "@/components/ui/Button";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {
   multipleChoiceAnswersSchema,
   pollAnswersSchema,
-} from "../data/questionFormSchema";
+} from "../validations/questionFormSchema";
 import { questionType } from "@/data/questionType";
 
-export default function AnswersForm({ isHidden, type, setData, onBack }) {
+export default function AnswersForm({ type, setData }) {
   let resolver = null;
   switch (type) {
     case questionType.MultipleChoice:
@@ -46,9 +46,7 @@ export default function AnswersForm({ isHidden, type, setData, onBack }) {
           answers: data.answers,
         }));
       })}
-      className={`flex flex-col gap-4 w-full transition transform ${
-        isHidden && "hidden"
-      }`}
+      className="flex flex-col gap-4 w-full"
     >
       <InputGroup>
         <Label id="title">Question</Label>
@@ -60,23 +58,18 @@ export default function AnswersForm({ isHidden, type, setData, onBack }) {
         />
         {errors.title?.message && <ErrorText>{errors.title.message}</ErrorText>}
       </InputGroup>
-      <AnswersFieldArray
+      <AnswersFieldGroup
         type={type}
         control={control}
         errors={errors}
         register={register}
         getValues={getValues}
       />
-      <div className="flex justify-between">
-        <Button variant="ButtonOutlined" onClick={() => onBack()}>
-          Back
+      <div className="flex gap-2 self-end">
+        <Button variant="ButtonOutlined">Cancel</Button>
+        <Button variant="ButtonContained" type="submit">
+          Create
         </Button>
-        <div className="flex gap-2">
-          <Button variant="ButtonOutlined">Cancel</Button>
-          <Button variant="ButtonContained" type="submit">
-            Create
-          </Button>
-        </div>
       </div>
     </form>
   );
