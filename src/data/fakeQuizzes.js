@@ -2,7 +2,7 @@ export const quizzes = [
   {
     id: "1",
     name: "English quiz",
-    status: "PUBLIC",
+    isPublic: true,
     subjects: [
       {
         id: "1",
@@ -45,7 +45,7 @@ export const quizzes = [
   {
     id: "2",
     name: "French quiz",
-    status: "DRAFT",
+    isPublic: false,
     subjects: [
       {
         id: "1",

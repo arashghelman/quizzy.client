@@ -27,7 +27,7 @@ export default function QuizPage() {
           <div className="flex flex-col gap-2">
             <Heading>{quiz.name}</Heading>
             <span className="text-gray-500">
-              {quizStatus[quiz.status].name}
+              {quiz.isPublic ? quizStatus.PUBLIC : quizStatus.DRAFT}
             </span>
           </div>
         </div>

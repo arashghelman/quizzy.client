@@ -22,7 +22,6 @@ import * as FaIcons from "react-icons/fa";
 export default function SettingsPanel() {
   const {
     register,
-    setValue,
     formState: { errors },
     watch,
     handleSubmit,
@@ -30,11 +29,6 @@ export default function SettingsPanel() {
 
   const { id } = useParams();
   const quiz = quizzes.find((quiz) => quiz.id === id);
-
-  React.useEffect(
-    () => setValue("isPublic", quiz.status === quizStatus.PUBLIC.type),
-    [quiz.status, setValue]
-  );
 
   return (
     <div className="border-1 p-6 rounded-md">
@@ -101,9 +95,7 @@ export default function SettingsPanel() {
             <div className="flex items-center gap-4">
               <Switch register={() => register("isPublic")} />
               <span className="text-gray-800">
-                {watch("isPublic")
-                  ? quizStatus.PUBLIC.name
-                  : quizStatus.DRAFT.name}
+                {watch("isPublic") ? quizStatus.PUBLIC : quizStatus.DRAFT}
               </span>
             </div>
             <HelperText>

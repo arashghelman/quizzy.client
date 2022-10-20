@@ -27,7 +27,7 @@ export default function OverviewPanel() {
             <div className="flex flex-col gap-2">
               <span className="text-gray-800 font-semibold">Status</span>
               <span className="text-gray-500">
-                {quizStatus[quiz.status].name}
+                {quiz.isPublic ? quizStatus.PUBLIC : quizStatus.DRAFT}
               </span>
             </div>
           </div>

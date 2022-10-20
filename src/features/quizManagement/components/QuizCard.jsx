@@ -6,7 +6,7 @@ import { quizStatus } from "@/data/quizStatus";
 import { Link, useNavigate } from "react-router-dom";
 import { menuItemType } from "@/components/data/menuItemType";
 
-export default function QuizCard({ data: { id, name, status, thumbnail } }) {
+export default function QuizCard({ data: { id, name, isPublic, thumbnail } }) {
   const navigate = useNavigate();
 
   return (
@@ -23,7 +23,9 @@ export default function QuizCard({ data: { id, name, status, thumbnail } }) {
           >
             {name}
           </Link>
-          <span className="text-gray-500">{quizStatus[status].name}</span>
+          <span className="text-gray-500">
+            {isPublic ? quizStatus.PUBLIC : quizStatus.DRAFT}
+          </span>
         </div>
       </div>
       <span className="text-gray-500">Created 2 days ago</span>
