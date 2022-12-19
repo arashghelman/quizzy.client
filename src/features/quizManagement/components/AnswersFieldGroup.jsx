@@ -1,13 +1,13 @@
 import InputGroup from "@/components/form/InputGroup";
 import Label from "@/components/form/Label";
-import InputSelect from "@/components/form/InputSelect";
+import InputCheck from "@/components/form/InputCheck";
 import React from "react";
 import Button from "@/components/ui/Button";
 import * as RiIcons from "react-icons/ri";
 import * as FaIcons from "react-icons/fa";
 import { useFieldArray } from "react-hook-form";
 import ErrorText from "@/components/form/ErrorText";
-import TextArea from "@/components/form/TextArea";
+import InputText from "@/components/form/InputText";
 
 export default function AnswersFieldGroup({
   control,
@@ -22,15 +22,15 @@ export default function AnswersFieldGroup({
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid gap-4">
         {fields.map((field, index) => (
           <InputGroup key={index}>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-2">
               <Label id={`answers[${index}].value`}>{`Answer ${
                 index + 1
               }`}</Label>
-              <div className="flex items-center gap-2">
-                <InputSelect
+              <div className="flex gap-2">
+                <InputCheck
                   type="radio"
                   name="answers"
                   value={field.value}
@@ -51,11 +51,10 @@ export default function AnswersFieldGroup({
                 </Button>
               </div>
             </div>
-            <TextArea
+            <InputText
               id={`answers[${index}].value`}
-              placeholder="Type an answer here..."
-              isInvalid={errors.title ? true : false}
-              register={() => register(`answers.${index}.value`)}
+              placeholder="Type your answer here..."
+              register={() => register(`answers[${index}].value`)}
             />
             {fields && errors?.answers?.[index]?.value?.message && (
               <ErrorText>{errors.answers[index].value.message}</ErrorText>
@@ -64,13 +63,12 @@ export default function AnswersFieldGroup({
         ))}
       </div>
       {fields.length < 5 && (
-        <div className="self-center">
+        <div className="self-center w-full">
           <Button
-            variant="ButtonContained"
+            variant="w-full flex justify-center p-4 mt-2 border-1 border-dashed border-gray-300 hover:border-gray-500 text-gray-400 rounded group"
             onClick={() => append({ value: "", isCorrect: false })}
           >
-            <RiIcons.RiAddFill />
-            <span className="mr-1">Add Answer</span>
+            <RiIcons.RiAddFill className="w-5 h-5 group-hover:text-gray-500" />
           </Button>
         </div>
       )}

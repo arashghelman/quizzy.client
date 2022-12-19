@@ -3,7 +3,7 @@ import InputGroup from "@/components/form/InputGroup";
 import InputText from "@/components/form/InputText";
 import Button from "@/components/ui/Button";
 import { subjects } from "@/data/fakeSubjects";
-import InputSelect from "@/components/form/InputSelect";
+import InputCheck from "@/components/form/InputCheck";
 import Label from "@/components/form/Label";
 import HelperText from "@/components/form/HelperText";
 import { useForm } from "react-hook-form";
@@ -40,7 +40,7 @@ export default function QuizForm() {
         <Label>Subjects</Label>
         <div className="grid grid-cols-3 gap-2">
           {subjects.map((sub) => (
-            <InputSelect
+            <InputCheck
               key={sub.id}
               label={sub.name}
               value={sub.id}

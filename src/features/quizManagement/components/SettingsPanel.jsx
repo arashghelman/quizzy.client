@@ -6,7 +6,7 @@ import Switch from "@/components/ui/Switch";
 import Button from "@/components/ui/Button";
 import { subjects } from "@/data/fakeSubjects";
 import InputFile from "@/components/form/InputFile";
-import InputSelect from "@/components/form/InputSelect";
+import InputCheck from "@/components/form/InputCheck";
 import Label from "@/components/form/Label";
 import HelperText from "@/components/form/HelperText";
 import { useForm } from "react-hook-form";
@@ -54,7 +54,7 @@ export default function SettingsPanel() {
             <Label>Subjects</Label>
             <div className="grid grid-cols-2 gap-2">
               {subjects.map((sub) => (
-                <InputSelect
+                <InputCheck
                   key={sub.id}
                   label={sub.name}
                   value={sub.id}

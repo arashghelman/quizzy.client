@@ -1,7 +1,7 @@
 import React from "react";
 import * as BsIcons from "react-icons/bs";
 
-export default function InputSelect({
+export default function InputCheck({
   label,
   name,
   value,

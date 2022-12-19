@@ -2,7 +2,10 @@ import React from "react";
 import Button from "./Button";
 import * as CgIcons from "react-icons/cg";
 
-const Modal = React.forwardRef(function Modal({ heading, children }, ref) {
+const Modal = React.forwardRef(function Modal(
+  { heading, width = "w-[584px]", children },
+  ref
+) {
   return (
     <dialog ref={ref} className="p-6 bg-white rounded">
       <div className="flex items-center justify-between mb-8">
@@ -14,7 +17,7 @@ const Modal = React.forwardRef(function Modal({ heading, children }, ref) {
           <CgIcons.CgClose className="w-4 h-4" />
         </Button>
       </div>
-      <div className="w-[584px] max-w-full">{children}</div>
+      <div className={`max-w-full ${width}`}>{children}</div>
     </dialog>
   );
 });
