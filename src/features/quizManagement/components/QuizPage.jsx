@@ -6,10 +6,10 @@ import * as HiIcons from "react-icons/hi";
 import { Link, useParams, Outlet } from "react-router-dom";
 import { quizzes } from "@/data/fakeQuizzes";
 import { quizStatus } from "@/data/quizStatus";
-import { items } from "../data/tabBarData";
 
 export default function QuizPage() {
   const { id } = useParams();
+
   const quiz = quizzes.find((quiz) => quiz.id === id);
 
   return (
@@ -32,7 +32,11 @@ export default function QuizPage() {
           </div>
         </div>
       </div>
-      <TabBar items={items} />
+      <TabBar>
+        <TabBar.Tab path="overview">Overview</TabBar.Tab>
+        <TabBar.Tab path="questions">Questions</TabBar.Tab>
+        <TabBar.Tab path="settings">Settings</TabBar.Tab>
+      </TabBar>
       <Outlet />
     </>
   );

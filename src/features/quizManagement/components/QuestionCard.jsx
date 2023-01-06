@@ -1,5 +1,5 @@
 import React from "react";
-import ActionsMenu from "@/components/ui/ActionsMenu";
+import Menu from "@/components/ui/Menu";
 import MenuItem from "@/components/ui/MenuItem";
 import { IconContext } from "react-icons/lib";
 import { menuItemType } from "@/components/data/menuItemType";
@@ -25,7 +25,7 @@ export default function QuestionCard({
             <h1 className="font-semibold text-lg">Q. {title}</h1>
           </div>
         </div>
-        <ActionsMenu>
+        <Menu>
           <MenuItem type={menuItemType.BUTTON}>
             <FaIcons.FaPen />
             Edit
@@ -39,7 +39,7 @@ export default function QuestionCard({
             Duplicate
           </MenuItem>
           {actions}
-        </ActionsMenu>
+        </Menu>
       </div>
       <ul className="grid gap-4">{answersList}</ul>
     </div>

@@ -77,4 +77,4 @@ function ItemNavLink({ path, isSubItem, children }) {
 }
 
 Sidebar.Item = Item;
-export { Sidebar };
+export default Sidebar;

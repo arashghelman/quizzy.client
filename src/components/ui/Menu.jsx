@@ -2,8 +2,9 @@ import React from "react";
 import Button from "./Button";
 import * as FiIcons from "react-icons/fi";
 import { IconContext } from "react-icons/lib";
+import { Link } from "react-router-dom";
 
-export default function ActionsMenu({ children }) {
+function Menu({ children }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const ref = React.useRef();
@@ -46,3 +47,37 @@ export default function ActionsMenu({ children }) {
     </div>
   );
 }
+
+function Item({ onClick, children }) {
+  return (
+    <li className="w-full">
+      <Button
+        variant="MenuItem"
+        onClick={(event) => {
+          event.stopPropagation();
+          onClick();
+        }}
+      >
+        {children}
+      </Button>
+    </li>
+  );
+}
+
+function LinkItem({ path, children }) {
+  return (
+    <li className="w-full">
+      <Link
+        to={path}
+        onClick={(event) => event.stopPropagation()}
+        className="MenuItem"
+      >
+        {children}
+      </Link>
+    </li>
+  );
+}
+
+Menu.Item = Item;
+Menu.LinkItem = LinkItem;
+export default Menu;
